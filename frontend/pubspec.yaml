@@ -1,0 +1,59 @@
+name: novel_reading_app
+description: A new Flutter project for reading novels offline and online.
+
+publish_to: 'none'
+
+version: 1.0.0+1
+
+environment:
+  sdk: '>=3.0.0 <4.0.0'
+
+dependencies:
+  flutter:
+    sdk: flutter
+  
+  # State Management & DI
+  flutter_riverpod: ^2.4.3
+  riverpod_annotation: ^2.2.0
+  get_it: ^7.6.4
+  
+  # Routing
+  go_router: ^12.0.0
+  
+  # Networking
+  dio: ^5.3.3
+  connectivity_plus: ^5.0.1
+  
+  # Local Storage & Offline support
+  hive: ^2.2.3
+  hive_flutter: ^1.1.0
+  flutter_secure_storage: ^9.0.0
+  shared_preferences: ^2.2.2
+  path_provider: ^2.1.1
+  
+  # UI & Design
+  cached_network_image: ^3.3.0
+  flutter_svg: ^2.0.9
+  google_fonts: ^6.1.0
+  shimmer: ^3.0.0
+  url_launcher: ^6.2.1
+  fluttertoast: ^8.2.3
+  
+  # Reader Engine
+  epub_view: ^3.1.2 
+  html: ^0.15.4
+  flutter_html: ^3.0.0-beta.2
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_lints: ^2.0.0
+  build_runner: ^2.4.6
+  riverpod_generator: ^2.3.2
+  hive_generator: ^2.0.1
+
+flutter:
+  uses-material-design: true
+  assets:
+    - assets/images/
+    - assets/icons/

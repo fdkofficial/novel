@@ -1,0 +1,486 @@
+INFO 2026-02-22 15:38:11,528 autoreload 16496 13988 Watching for file changes with StatReloader
+INFO 2026-02-22 15:41:37,869 autoreload 7356 9080 Watching for file changes with StatReloader
+INFO 2026-02-22 15:46:27,483 autoreload 6540 7880 Watching for file changes with StatReloader
+INFO 2026-02-22 15:58:49,950 autoreload 5428 17328 Watching for file changes with StatReloader
+INFO 2026-02-22 15:59:42,700 basehttp 6540 15124 "GET /api/docs/ HTTP/1.1" 200 4459
+INFO 2026-02-22 16:05:02,623 basehttp 6540 9716 "HEAD /api/docs/ HTTP/1.1" 200 0
+INFO 2026-02-22 16:05:12,883 basehttp 6540 9080 "GET /api/docs/ HTTP/1.1" 200 4459
+INFO 2026-02-22 16:08:55,379 basehttp 5428 4104 "GET /api/docs/ HTTP/1.1" 200 4459
+INFO 2026-02-22 16:09:18,433 autoreload 11868 12556 Watching for file changes with StatReloader
+INFO 2026-02-22 16:09:29,459 basehttp 5428 4104 "GET /api/docs/ HTTP/1.1" 200 4459
+INFO 2026-02-22 16:10:12,637 basehttp 5428 9792 "GET /api/docs/ HTTP/1.1" 200 4459
+INFO 2026-02-22 16:11:27,398 basehttp 5428 9792 "GET /api/docs/ HTTP/1.1" 200 4459
+INFO 2026-02-22 16:11:40,615 basehttp 5428 9792 "GET /api/schema/ HTTP/1.1" 200 120119
+WARNING 2026-02-22 16:14:01,554 log 5428 1240 Unauthorized: /api/v1/auth/login/
+WARNING 2026-02-22 16:14:01,632 basehttp 5428 1240 "POST /api/v1/auth/login/ HTTP/1.1" 401 63
+INFO 2026-02-22 16:47:53,832 autoreload 12356 13044 Watching for file changes with StatReloader
+INFO 2026-02-24 13:21:39,101 autoreload 9368 12948 Watching for file changes with StatReloader
+WARNING 2026-02-24 13:28:50,460 log 9368 2860 Not Found: /
+WARNING 2026-02-24 13:28:50,484 basehttp 9368 2860 "GET / HTTP/1.1" 404 3153
+WARNING 2026-02-24 13:28:50,859 log 9368 2860 Not Found: /favicon.ico
+WARNING 2026-02-24 13:28:50,859 basehttp 9368 2860 "GET /favicon.ico HTTP/1.1" 404 3204
+INFO 2026-02-24 13:28:54,891 basehttp 9368 2860 "GET /admin HTTP/1.1" 301 0
+INFO 2026-02-24 13:28:55,123 basehttp 9368 5148 "GET /admin/ HTTP/1.1" 302 0
+INFO 2026-02-24 13:28:56,178 basehttp 9368 5148 "GET /admin/login/?next=/admin/ HTTP/1.1" 200 4178
+INFO 2026-02-24 13:28:56,875 basehttp 9368 8816 "GET /static/admin/css/responsive.css HTTP/1.1" 200 18533
+INFO 2026-02-24 13:28:56,883 basehttp 9368 5148 "GET /static/admin/css/base.css HTTP/1.1" 200 21207
+INFO 2026-02-24 13:28:56,921 basehttp 9368 14660 "GET /static/admin/css/dark_mode.css HTTP/1.1" 200 2929
+INFO 2026-02-24 13:28:56,931 basehttp 9368 16040 "GET /static/admin/css/login.css HTTP/1.1" 200 958
+INFO 2026-02-24 13:28:56,969 basehttp 9368 16684 "GET /static/admin/css/nav_sidebar.css HTTP/1.1" 200 2694
+INFO 2026-02-24 13:28:57,045 basehttp 9368 12968 "GET /static/admin/js/theme.js HTTP/1.1" 200 1943
+INFO 2026-02-24 13:28:57,045 basehttp 9368 5148 "GET /static/admin/js/nav_sidebar.js HTTP/1.1" 200 3063
+INFO 2026-02-24 13:28:57,304 basehttp 9368 15232 "GET /static/admin/js/nav_sidebar.js HTTP/1.1" 200 3063
+INFO 2026-02-24 13:28:57,304 basehttp 9368 4520 "GET /static/admin/js/theme.js HTTP/1.1" 200 1943
+INFO 2026-02-24 13:29:03,955 basehttp 9368 5148 "POST /admin/login/?next=/admin/ HTTP/1.1" 200 4346
+INFO 2026-02-24 13:29:14,554 basehttp 9368 5148 "POST /admin/login/?next=/admin/ HTTP/1.1" 200 4346
+INFO 2026-02-24 13:31:04,889 basehttp 9368 5148 "POST /admin/login/?next=/admin/ HTTP/1.1" 302 0
+INFO 2026-02-24 13:31:05,181 basehttp 9368 5148 "GET /admin/ HTTP/1.1" 200 13333
+INFO 2026-02-24 13:31:05,286 basehttp 9368 5148 "GET /static/admin/css/dashboard.css HTTP/1.1" 200 441
+INFO 2026-02-24 13:31:05,842 basehttp 9368 5148 "GET /static/admin/img/icon-addlink.svg HTTP/1.1" 200 331
+INFO 2026-02-24 13:31:05,870 basehttp 9368 12968 "GET /static/admin/img/icon-changelink.svg HTTP/1.1" 200 380
+INFO 2026-02-24 13:31:12,967 basehttp 9368 12968 "GET /admin/novels/novel/ HTTP/1.1" 200 14302
+INFO 2026-02-24 13:31:13,056 basehttp 9368 5148 "GET /admin/jsi18n/ HTTP/1.1" 200 3343
+INFO 2026-02-24 13:31:13,096 basehttp 9368 12968 "GET /static/admin/css/changelists.css HTTP/1.1" 200 6566
+INFO 2026-02-24 13:31:13,101 basehttp 9368 16040 "GET /static/admin/js/jquery.init.js HTTP/1.1" 200 347
+INFO 2026-02-24 13:31:13,194 basehttp 9368 8816 "GET /static/admin/js/admin/RelatedObjectLookups.js HTTP/1.1" 200 8943
+INFO 2026-02-24 13:31:13,202 basehttp 9368 16040 "GET /static/admin/js/urlify.js HTTP/1.1" 200 7887
+INFO 2026-02-24 13:31:13,202 basehttp 9368 5148 "GET /static/admin/js/actions.js HTTP/1.1" 200 7872
+INFO 2026-02-24 13:31:13,246 basehttp 9368 14660 "GET /static/admin/js/core.js HTTP/1.1" 200 5682
+INFO 2026-02-24 13:31:13,291 basehttp 9368 12968 "GET /static/admin/js/prepopulate.js HTTP/1.1" 200 1531
+INFO 2026-02-24 13:31:13,314 basehttp 9368 16684 "GET /static/admin/js/vendor/jquery/jquery.js HTTP/1.1" 200 292458
+INFO 2026-02-24 13:31:13,364 basehttp 9368 5148 "GET /static/admin/img/search.svg HTTP/1.1" 200 458
+INFO 2026-02-24 13:31:13,493 basehttp 9368 5148 "GET /static/admin/js/filters.js HTTP/1.1" 200 978
+INFO 2026-02-24 13:31:13,571 basehttp 9368 8816 "GET /static/admin/js/vendor/xregexp/xregexp.js HTTP/1.1" 200 232381
+INFO 2026-02-24 13:31:13,691 basehttp 9368 8816 "GET /static/admin/img/tooltag-add.svg HTTP/1.1" 200 331
+INFO 2026-02-24 13:31:14,017 basehttp 9368 15232 "GET /static/admin/js/jquery.init.js HTTP/1.1" 200 347
+INFO 2026-02-24 13:31:14,025 basehttp 9368 4520 "GET /admin/jsi18n/ HTTP/1.1" 200 3343
+INFO 2026-02-24 13:31:14,119 basehttp 9368 4520 "GET /static/admin/js/admin/RelatedObjectLookups.js HTTP/1.1" 200 8943
+INFO 2026-02-24 13:31:14,158 basehttp 9368 4520 "GET /static/admin/js/urlify.js HTTP/1.1" 200 7887
+INFO 2026-02-24 13:31:14,383 basehttp 9368 4520 "GET /static/admin/js/actions.js HTTP/1.1" 200 7872
+INFO 2026-02-24 13:31:14,536 basehttp 9368 4520 "GET /static/admin/js/prepopulate.js HTTP/1.1" 200 1531
+INFO 2026-02-24 13:31:14,571 basehttp 9368 4520 "GET /static/admin/js/core.js HTTP/1.1" 200 5682
+INFO 2026-02-24 13:31:14,643 basehttp 9368 4520 "GET /static/admin/js/vendor/jquery/jquery.js HTTP/1.1" 200 292458
+INFO 2026-02-24 13:31:14,720 basehttp 9368 4520 "GET /static/admin/js/filters.js HTTP/1.1" 200 978
+INFO 2026-02-24 13:31:15,478 basehttp 9368 4520 "GET /static/admin/js/vendor/xregexp/xregexp.js HTTP/1.1" 200 232381
+INFO 2026-02-24 13:31:15,585 basehttp 9368 8816 "GET /admin/ HTTP/1.1" 200 13333
+INFO 2026-02-24 13:35:11,538 basehttp 9368 808 "OPTIONS /api/v1/auth/login/ HTTP/1.1" 200 0
+INFO 2026-02-24 13:35:59,432 basehttp 9368 808 "OPTIONS /api/v1/auth/login/ HTTP/1.1" 200 0
+INFO 2026-02-24 13:36:38,528 basehttp 9368 808 "OPTIONS /api/v1/auth/register/ HTTP/1.1" 200 0
+INFO 2026-02-24 13:39:51,568 autoreload 9368 12948 E:\Projects\Freelense assignment\Ebook flutter\backend\novel_reading_api\settings.py changed, reloading.
+INFO 2026-02-24 13:40:13,413 autoreload 4176 11480 Watching for file changes with StatReloader
+INFO 2026-02-24 13:40:52,055 basehttp 4176 11804 "OPTIONS /api/v1/auth/login/ HTTP/1.1" 200 0
+INFO 2026-02-24 13:40:56,378 basehttp 4176 11804 "POST /api/v1/auth/login/ HTTP/1.1" 200 1089
+INFO 2026-02-24 13:41:10,334 basehttp 4176 12116 "OPTIONS /api/v1/reading/progress/ HTTP/1.1" 200 0
+INFO 2026-02-24 13:41:10,334 basehttp 4176 11804 "OPTIONS /api/v1/recommendations/ HTTP/1.1" 200 0
+INFO 2026-02-24 13:41:10,548 basehttp 4176 11804 "GET /api/v1/reading/progress/ HTTP/1.1" 200 52
+INFO 2026-02-24 13:41:11,130 basehttp 4176 12116 "GET /api/v1/recommendations/ HTTP/1.1" 200 76
+INFO 2026-02-24 13:41:16,642 basehttp 4176 12116 "OPTIONS /api/v1/novels/genres/ HTTP/1.1" 200 0
+INFO 2026-02-24 13:41:16,642 basehttp 4176 11804 "OPTIONS /api/v1/novels/ HTTP/1.1" 200 0
+INFO 2026-02-24 13:41:16,675 basehttp 4176 12116 "GET /api/v1/novels/ HTTP/1.1" 200 52
+INFO 2026-02-24 13:41:16,683 basehttp 4176 11804 "GET /api/v1/novels/genres/ HTTP/1.1" 200 52
+INFO 2026-02-24 13:51:03,466 autoreload 9008 15228 Watching for file changes with StatReloader
+INFO 2026-02-24 14:05:12,590 basehttp 4176 6452 "POST /api/v1/auth/login/ HTTP/1.1" 200 1089
+INFO 2026-02-24 14:05:13,204 basehttp 4176 10916 "GET /api/v1/reading/progress/ HTTP/1.1" 200 52
+INFO 2026-02-24 14:05:13,380 basehttp 4176 6452 "GET /api/v1/recommendations/ HTTP/1.1" 200 76
+INFO 2026-02-24 14:05:25,508 basehttp 4176 6452 "GET /api/v1/novels/genres/ HTTP/1.1" 200 1584
+INFO 2026-02-24 14:05:25,758 basehttp 4176 10916 "GET /api/v1/novels/ HTTP/1.1" 200 16212
+INFO 2026-02-24 14:05:35,695 basehttp 4176 10916 "OPTIONS /api/v1/novels/d0495929-2b20-44f9-92e3-0eb65c4c480b/ HTTP/1.1" 200 0
+INFO 2026-02-24 14:05:35,894 basehttp 4176 10916 "GET /api/v1/novels/d0495929-2b20-44f9-92e3-0eb65c4c480b/ HTTP/1.1" 200 2358
+INFO 2026-02-24 14:05:39,388 basehttp 4176 10916 "OPTIONS /api/v1/novels/d0495929-2b20-44f9-92e3-0eb65c4c480b/chapters/1/ HTTP/1.1" 200 0
+WARNING 2026-02-24 14:05:40,556 log 4176 10916 Not Found: /api/v1/novels/d0495929-2b20-44f9-92e3-0eb65c4c480b/chapters/1/
+WARNING 2026-02-24 14:05:40,556 basehttp 4176 10916 "GET /api/v1/novels/d0495929-2b20-44f9-92e3-0eb65c4c480b/chapters/1/ HTTP/1.1" 404 6771
+INFO 2026-02-24 15:00:12,362 autoreload 4176 11480 E:\Projects\Freelense assignment\Ebook flutter\backend\apps\novels\views.py changed, reloading.
+INFO 2026-02-24 15:00:18,267 autoreload 17140 15516 Watching for file changes with StatReloader
+INFO 2026-02-24 15:00:26,832 autoreload 17140 15516 E:\Projects\Freelense assignment\Ebook flutter\backend\apps\novels\urls.py changed, reloading.
+INFO 2026-02-24 15:00:34,033 autoreload 16656 11172 Watching for file changes with StatReloader
+INFO 2026-02-24 15:39:42,014 basehttp 16656 10336 "POST /api/v1/auth/login/ HTTP/1.1" 200 1089
+INFO 2026-02-24 15:39:42,850 basehttp 16656 17348 "GET /api/v1/reading/progress/ HTTP/1.1" 200 52
+INFO 2026-02-24 15:39:43,936 basehttp 16656 10336 "GET /api/v1/recommendations/ HTTP/1.1" 200 76
+INFO 2026-02-24 15:39:52,493 basehttp 16656 10336 "GET /api/v1/novels/genres/ HTTP/1.1" 200 1584
+INFO 2026-02-24 15:39:52,758 basehttp 16656 17348 "GET /api/v1/novels/ HTTP/1.1" 200 16212
+INFO 2026-02-24 15:39:56,013 basehttp 16656 17348 "OPTIONS /api/v1/novels/99e8ded9-237a-48a2-9b6a-46ecba0785e7/ HTTP/1.1" 200 0
+INFO 2026-02-24 15:39:56,277 basehttp 16656 17348 "GET /api/v1/novels/99e8ded9-237a-48a2-9b6a-46ecba0785e7/ HTTP/1.1" 200 2661
+INFO 2026-02-24 15:40:03,907 basehttp 16656 17348 "OPTIONS /api/v1/novels/99e8ded9-237a-48a2-9b6a-46ecba0785e7/chapters/1/ HTTP/1.1" 200 0
+INFO 2026-02-24 15:40:03,926 basehttp 16656 17348 "GET /api/v1/novels/99e8ded9-237a-48a2-9b6a-46ecba0785e7/chapters/1/ HTTP/1.1" 200 3083
+INFO 2026-02-24 15:40:06,612 basehttp 16656 17348 "OPTIONS /api/v1/reading/progress/update/ HTTP/1.1" 200 0
+ERROR 2026-02-24 15:40:07,904 log 16656 10336 Internal Server Error: /api/v1/reading/progress/update/
+Traceback (most recent call last):
+  File "C:\Users\Fardeen Khan\AppData\Local\Programs\Python\Python311\Lib\site-packages\django\db\models\query.py", line 916, in get_or_create
+    return self.get(**kwargs), False
+           ^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Fardeen Khan\AppData\Local\Programs\Python\Python311\Lib\site-packages\django\db\models\query.py", line 637, in get
+    raise self.model.DoesNotExist(
+apps.reading.models.ReadingProgress.DoesNotExist: ReadingProgress matching query does not exist.
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\Fardeen Khan\AppData\Local\Programs\Python\Python311\Lib\site-packages\django\db\backends\utils.py", line 89, in _execute
+    return self.cursor.execute(sql, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Fardeen Khan\AppData\Local\Programs\Python\Python311\Lib\site-packages\django\db\backends\sqlite3\base.py", line 328, in execute
+    return super().execute(query, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+sqlite3.IntegrityError: NOT NULL constraint failed: reading_progress.novel_id
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\Fardeen Khan\AppData\Local\Programs\Python\Python311\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Fardeen Khan\AppData\Local\Programs\Python\Python311\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Fardeen Khan\AppData\Local\Programs\Python\Python311\Lib\site-packages\django\views\decorators\csrf.py", line 56, in wrapper_view
+    return view_func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Fardeen Khan\AppData\Local\Programs\Python\Python311\Lib\site-packages\django\views\generic\base.py", line 104, in view
+    return self.dispatch(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Fardeen Khan\AppData\Local\Programs\Python\Python311\Lib\site-packages\rest_framework\views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Fardeen Khan\AppData\Local\Programs\Python\Python311\Lib\site-packages\rest_framework\views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "C:\Users\Fardeen Khan\AppData\Local\Programs\Python\Python311\Lib\site-packages\rest_framework\views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "C:\Users\Fardeen Khan\AppData\Local\Programs\Python\Python311\Lib\site-packages\rest_framework\views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\Projects\Freelense assignment\Ebook flutter\backend\apps\reading\views.py", line 30, in post
+    progress, created = ReadingProgress.objects.get_or_create(
+                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Fardeen Khan\AppData\Local\Programs\Python\Python311\Lib\site-packages\django\db\models\manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Fardeen Khan\AppData\Local\Programs\Python\Python311\Lib\site-packages\django\db\models\query.py", line 923, in get_or_create
+    return self.create(**params), True
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Fardeen Khan\AppData\Local\Programs\Python\Python311\Lib\site-packages\django\db\models\query.py", line 658, in create
+    obj.save(force_insert=True, using=self.db)
+  File "C:\Users\Fardeen Khan\AppData\Local\Programs\Python\Python311\Lib\site-packages\django\db\models\base.py", line 814, in save
+    self.save_base(
+  File "C:\Users\Fardeen Khan\AppData\Local\Programs\Python\Python311\Lib\site-packages\django\db\models\base.py", line 877, in save_base
+    updated = self._save_table(
+              ^^^^^^^^^^^^^^^^^
+  File "C:\Users\Fardeen Khan\AppData\Local\Programs\Python\Python311\Lib\site-packages\django\db\models\base.py", line 1020, in _save_table
+    results = self._do_insert(
+              ^^^^^^^^^^^^^^^^
+  File "C:\Users\Fardeen Khan\AppData\Local\Programs\Python\Python311\Lib\site-packages\django\db\models\base.py", line 1061, in _do_insert
+    return manager._insert(
+           ^^^^^^^^^^^^^^^^
+  File "C:\Users\Fardeen Khan\AppData\Local\Programs\Python\Python311\Lib\site-packages\django\db\models\manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Fardeen Khan\AppData\Local\Programs\Python\Python311\Lib\site-packages\django\db\models\query.py", line 1805, in _insert
+    return query.get_compiler(using=using).execute_sql(returning_fields)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Fardeen Khan\AppData\Local\Programs\Python\Python311\Lib\site-packages\django\db\models\sql\compiler.py", line 1822, in execute_sql
+    cursor.execute(sql, params)
+  File "C:\Users\Fardeen Khan\AppData\Local\Programs\Python\Python311\Lib\site-packages\django\db\backends\utils.py", line 102, in execute
+    return super().execute(sql, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Fardeen Khan\AppData\Local\Programs\Python\Python311\Lib\site-packages\django\db\backends\utils.py", line 67, in execute
+    return self._execute_with_wrappers(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Fardeen Khan\AppData\Local\Programs\Python\Python311\Lib\site-packages\django\db\backends\utils.py", line 80, in _execute_with_wrappers
+    return executor(sql, params, many, context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Fardeen Khan\AppData\Local\Programs\Python\Python311\Lib\site-packages\django\db\backends\utils.py", line 84, in _execute
+    with self.db.wrap_database_errors:
+  File "C:\Users\Fardeen Khan\AppData\Local\Programs\Python\Python311\Lib\site-packages\django\db\utils.py", line 91, in __exit__
+    raise dj_exc_value.with_traceback(traceback) from exc_value
+  File "C:\Users\Fardeen Khan\AppData\Local\Programs\Python\Python311\Lib\site-packages\django\db\backends\utils.py", line 89, in _execute
+    return self.cursor.execute(sql, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Fardeen Khan\AppData\Local\Programs\Python\Python311\Lib\site-packages\django\db\backends\sqlite3\base.py", line 328, in execute
+    return super().execute(query, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+django.db.utils.IntegrityError: NOT NULL constraint failed: reading_progress.novel_id
+ERROR 2026-02-24 15:40:07,904 log 16656 17348 Internal Server Error: /api/v1/reading/progress/update/
+Traceback (most recent call last):
+  File "C:\Users\Fardeen Khan\AppData\Local\Programs\Python\Python311\Lib\site-packages\django\db\models\query.py", line 916, in get_or_create
+    return self.get(**kwargs), False
+           ^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Fardeen Khan\AppData\Local\Programs\Python\Python311\Lib\site-packages\django\db\models\query.py", line 637, in get
+    raise self.model.DoesNotExist(
+apps.reading.models.ReadingProgress.DoesNotExist: ReadingProgress matching query does not exist.
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\Fardeen Khan\AppData\Local\Programs\Python\Python311\Lib\site-packages\django\db\backends\utils.py", line 89, in _execute
+    return self.cursor.execute(sql, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Fardeen Khan\AppData\Local\Programs\Python\Python311\Lib\site-packages\django\db\backends\sqlite3\base.py", line 328, in execute
+    return super().execute(query, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+sqlite3.IntegrityError: NOT NULL constraint failed: reading_progress.novel_id
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\Fardeen Khan\AppData\Local\Programs\Python\Python311\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Fardeen Khan\AppData\Local\Programs\Python\Python311\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Fardeen Khan\AppData\Local\Programs\Python\Python311\Lib\site-packages\django\views\decorators\csrf.py", line 56, in wrapper_view
+    return view_func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Fardeen Khan\AppData\Local\Programs\Python\Python311\Lib\site-packages\django\views\generic\base.py", line 104, in view
+    return self.dispatch(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Fardeen Khan\AppData\Local\Programs\Python\Python311\Lib\site-packages\rest_framework\views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Fardeen Khan\AppData\Local\Programs\Python\Python311\Lib\site-packages\rest_framework\views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "C:\Users\Fardeen Khan\AppData\Local\Programs\Python\Python311\Lib\site-packages\rest_framework\views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "C:\Users\Fardeen Khan\AppData\Local\Programs\Python\Python311\Lib\site-packages\rest_framework\views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\Projects\Freelense assignment\Ebook flutter\backend\apps\reading\views.py", line 30, in post
+    progress, created = ReadingProgress.objects.get_or_create(
+                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Fardeen Khan\AppData\Local\Programs\Python\Python311\Lib\site-packages\django\db\models\manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Fardeen Khan\AppData\Local\Programs\Python\Python311\Lib\site-packages\django\db\models\query.py", line 923, in get_or_create
+    return self.create(**params), True
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Fardeen Khan\AppData\Local\Programs\Python\Python311\Lib\site-packages\django\db\models\query.py", line 658, in create
+    obj.save(force_insert=True, using=self.db)
+  File "C:\Users\Fardeen Khan\AppData\Local\Programs\Python\Python311\Lib\site-packages\django\db\models\base.py", line 814, in save
+    self.save_base(
+  File "C:\Users\Fardeen Khan\AppData\Local\Programs\Python\Python311\Lib\site-packages\django\db\models\base.py", line 877, in save_base
+    updated = self._save_table(
+              ^^^^^^^^^^^^^^^^^
+  File "C:\Users\Fardeen Khan\AppData\Local\Programs\Python\Python311\Lib\site-packages\django\db\models\base.py", line 1020, in _save_table
+    results = self._do_insert(
+              ^^^^^^^^^^^^^^^^
+  File "C:\Users\Fardeen Khan\AppData\Local\Programs\Python\Python311\Lib\site-packages\django\db\models\base.py", line 1061, in _do_insert
+    return manager._insert(
+           ^^^^^^^^^^^^^^^^
+  File "C:\Users\Fardeen Khan\AppData\Local\Programs\Python\Python311\Lib\site-packages\django\db\models\manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Fardeen Khan\AppData\Local\Programs\Python\Python311\Lib\site-packages\django\db\models\query.py", line 1805, in _insert
+    return query.get_compiler(using=using).execute_sql(returning_fields)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Fardeen Khan\AppData\Local\Programs\Python\Python311\Lib\site-packages\django\db\models\sql\compiler.py", line 1822, in execute_sql
+    cursor.execute(sql, params)
+  File "C:\Users\Fardeen Khan\AppData\Local\Programs\Python\Python311\Lib\site-packages\django\db\backends\utils.py", line 102, in execute
+    return super().execute(sql, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Fardeen Khan\AppData\Local\Programs\Python\Python311\Lib\site-packages\django\db\backends\utils.py", line 67, in execute
+    return self._execute_with_wrappers(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Fardeen Khan\AppData\Local\Programs\Python\Python311\Lib\site-packages\django\db\backends\utils.py", line 80, in _execute_with_wrappers
+    return executor(sql, params, many, context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Fardeen Khan\AppData\Local\Programs\Python\Python311\Lib\site-packages\django\db\backends\utils.py", line 84, in _execute
+    with self.db.wrap_database_errors:
+  File "C:\Users\Fardeen Khan\AppData\Local\Programs\Python\Python311\Lib\site-packages\django\db\utils.py", line 91, in __exit__
+    raise dj_exc_value.with_traceback(traceback) from exc_value
+  File "C:\Users\Fardeen Khan\AppData\Local\Programs\Python\Python311\Lib\site-packages\django\db\backends\utils.py", line 89, in _execute
+    return self.cursor.execute(sql, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Fardeen Khan\AppData\Local\Programs\Python\Python311\Lib\site-packages\django\db\backends\sqlite3\base.py", line 328, in execute
+    return super().execute(query, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+django.db.utils.IntegrityError: NOT NULL constraint failed: reading_progress.novel_id
+ERROR 2026-02-24 15:40:07,913 basehttp 16656 10336 "POST /api/v1/reading/progress/update/ HTTP/1.1" 500 27973
+ERROR 2026-02-24 15:40:07,968 basehttp 16656 17348 "POST /api/v1/reading/progress/update/ HTTP/1.1" 500 27973
+ERROR 2026-02-24 15:40:08,419 log 16656 17348 Internal Server Error: /api/v1/reading/progress/update/
+Traceback (most recent call last):
+  File "C:\Users\Fardeen Khan\AppData\Local\Programs\Python\Python311\Lib\site-packages\django\db\models\query.py", line 916, in get_or_create
+    return self.get(**kwargs), False
+           ^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Fardeen Khan\AppData\Local\Programs\Python\Python311\Lib\site-packages\django\db\models\query.py", line 637, in get
+    raise self.model.DoesNotExist(
+apps.reading.models.ReadingProgress.DoesNotExist: ReadingProgress matching query does not exist.
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\Fardeen Khan\AppData\Local\Programs\Python\Python311\Lib\site-packages\django\db\backends\utils.py", line 89, in _execute
+    return self.cursor.execute(sql, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Fardeen Khan\AppData\Local\Programs\Python\Python311\Lib\site-packages\django\db\backends\sqlite3\base.py", line 328, in execute
+    return super().execute(query, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+sqlite3.IntegrityError: NOT NULL constraint failed: reading_progress.novel_id
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\Fardeen Khan\AppData\Local\Programs\Python\Python311\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Fardeen Khan\AppData\Local\Programs\Python\Python311\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Fardeen Khan\AppData\Local\Programs\Python\Python311\Lib\site-packages\django\views\decorators\csrf.py", line 56, in wrapper_view
+    return view_func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Fardeen Khan\AppData\Local\Programs\Python\Python311\Lib\site-packages\django\views\generic\base.py", line 104, in view
+    return self.dispatch(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Fardeen Khan\AppData\Local\Programs\Python\Python311\Lib\site-packages\rest_framework\views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Fardeen Khan\AppData\Local\Programs\Python\Python311\Lib\site-packages\rest_framework\views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "C:\Users\Fardeen Khan\AppData\Local\Programs\Python\Python311\Lib\site-packages\rest_framework\views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "C:\Users\Fardeen Khan\AppData\Local\Programs\Python\Python311\Lib\site-packages\rest_framework\views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\Projects\Freelense assignment\Ebook flutter\backend\apps\reading\views.py", line 30, in post
+    progress, created = ReadingProgress.objects.get_or_create(
+                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Fardeen Khan\AppData\Local\Programs\Python\Python311\Lib\site-packages\django\db\models\manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Fardeen Khan\AppData\Local\Programs\Python\Python311\Lib\site-packages\django\db\models\query.py", line 923, in get_or_create
+    return self.create(**params), True
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Fardeen Khan\AppData\Local\Programs\Python\Python311\Lib\site-packages\django\db\models\query.py", line 658, in create
+    obj.save(force_insert=True, using=self.db)
+  File "C:\Users\Fardeen Khan\AppData\Local\Programs\Python\Python311\Lib\site-packages\django\db\models\base.py", line 814, in save
+    self.save_base(
+  File "C:\Users\Fardeen Khan\AppData\Local\Programs\Python\Python311\Lib\site-packages\django\db\models\base.py", line 877, in save_base
+    updated = self._save_table(
+              ^^^^^^^^^^^^^^^^^
+  File "C:\Users\Fardeen Khan\AppData\Local\Programs\Python\Python311\Lib\site-packages\django\db\models\base.py", line 1020, in _save_table
+    results = self._do_insert(
+              ^^^^^^^^^^^^^^^^
+  File "C:\Users\Fardeen Khan\AppData\Local\Programs\Python\Python311\Lib\site-packages\django\db\models\base.py", line 1061, in _do_insert
+    return manager._insert(
+           ^^^^^^^^^^^^^^^^
+  File "C:\Users\Fardeen Khan\AppData\Local\Programs\Python\Python311\Lib\site-packages\django\db\models\manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Fardeen Khan\AppData\Local\Programs\Python\Python311\Lib\site-packages\django\db\models\query.py", line 1805, in _insert
+    return query.get_compiler(using=using).execute_sql(returning_fields)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Fardeen Khan\AppData\Local\Programs\Python\Python311\Lib\site-packages\django\db\models\sql\compiler.py", line 1822, in execute_sql
+    cursor.execute(sql, params)
+  File "C:\Users\Fardeen Khan\AppData\Local\Programs\Python\Python311\Lib\site-packages\django\db\backends\utils.py", line 102, in execute
+    return super().execute(sql, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Fardeen Khan\AppData\Local\Programs\Python\Python311\Lib\site-packages\django\db\backends\utils.py", line 67, in execute
+    return self._execute_with_wrappers(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Fardeen Khan\AppData\Local\Programs\Python\Python311\Lib\site-packages\django\db\backends\utils.py", line 80, in _execute_with_wrappers
+    return executor(sql, params, many, context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Fardeen Khan\AppData\Local\Programs\Python\Python311\Lib\site-packages\django\db\backends\utils.py", line 84, in _execute
+    with self.db.wrap_database_errors:
+  File "C:\Users\Fardeen Khan\AppData\Local\Programs\Python\Python311\Lib\site-packages\django\db\utils.py", line 91, in __exit__
+    raise dj_exc_value.with_traceback(traceback) from exc_value
+  File "C:\Users\Fardeen Khan\AppData\Local\Programs\Python\Python311\Lib\site-packages\django\db\backends\utils.py", line 89, in _execute
+    return self.cursor.execute(sql, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Fardeen Khan\AppData\Local\Programs\Python\Python311\Lib\site-packages\django\db\backends\sqlite3\base.py", line 328, in execute
+    return super().execute(query, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+django.db.utils.IntegrityError: NOT NULL constraint failed: reading_progress.novel_id
+ERROR 2026-02-24 15:40:08,432 basehttp 16656 17348 "POST /api/v1/reading/progress/update/ HTTP/1.1" 500 27973
+INFO 2026-02-24 15:42:48,015 autoreload 16656 11172 E:\Projects\Freelense assignment\Ebook flutter\backend\apps\reading\views.py changed, reloading.
+INFO 2026-02-24 15:42:51,966 autoreload 8052 13524 Watching for file changes with StatReloader
+INFO 2026-02-24 15:49:53,882 basehttp 8052 10368 "OPTIONS /api/v1/auth/login/ HTTP/1.1" 200 0
+INFO 2026-02-24 15:49:56,143 basehttp 8052 10368 "POST /api/v1/auth/login/ HTTP/1.1" 200 1089
+INFO 2026-02-24 15:49:56,974 basehttp 8052 10368 "OPTIONS /api/v1/recommendations/ HTTP/1.1" 200 0
+INFO 2026-02-24 15:49:56,981 basehttp 8052 10368 "OPTIONS /api/v1/reading/progress/ HTTP/1.1" 200 0
+INFO 2026-02-24 15:49:57,056 basehttp 8052 10368 "GET /api/v1/reading/progress/ HTTP/1.1" 200 52
+INFO 2026-02-24 15:49:57,328 basehttp 8052 10276 "GET /api/v1/recommendations/ HTTP/1.1" 200 76
+INFO 2026-02-24 15:50:25,438 basehttp 8052 10276 "OPTIONS /api/v1/novels/genres/ HTTP/1.1" 200 0
+INFO 2026-02-24 15:50:25,445 basehttp 8052 10368 "OPTIONS /api/v1/novels/ HTTP/1.1" 200 0
+INFO 2026-02-24 15:50:25,709 basehttp 8052 10276 "GET /api/v1/novels/genres/ HTTP/1.1" 200 1584
+INFO 2026-02-24 15:50:25,818 basehttp 8052 10368 "GET /api/v1/novels/ HTTP/1.1" 200 16212
+INFO 2026-02-24 15:50:32,792 basehttp 8052 10368 "OPTIONS /api/v1/novels/99e8ded9-237a-48a2-9b6a-46ecba0785e7/ HTTP/1.1" 200 0
+INFO 2026-02-24 15:50:32,991 basehttp 8052 10368 "GET /api/v1/novels/99e8ded9-237a-48a2-9b6a-46ecba0785e7/ HTTP/1.1" 200 2661
+INFO 2026-02-24 15:50:37,644 basehttp 8052 10368 "OPTIONS /api/v1/novels/99e8ded9-237a-48a2-9b6a-46ecba0785e7/chapters/1/ HTTP/1.1" 200 0
+INFO 2026-02-24 15:50:37,663 basehttp 8052 10368 "GET /api/v1/novels/99e8ded9-237a-48a2-9b6a-46ecba0785e7/chapters/1/ HTTP/1.1" 200 3083
+INFO 2026-02-24 15:50:46,119 basehttp 8052 10368 "OPTIONS /api/v1/reading/progress/update/ HTTP/1.1" 200 0
+INFO 2026-02-24 15:50:46,840 basehttp 8052 10276 "POST /api/v1/reading/progress/update/ HTTP/1.1" 200 1375
+INFO 2026-02-24 15:50:47,118 basehttp 8052 9656 "POST /api/v1/reading/progress/update/ HTTP/1.1" 200 1375
+INFO 2026-02-24 15:50:47,370 basehttp 8052 10368 "POST /api/v1/reading/progress/update/ HTTP/1.1" 200 1376
+INFO 2026-02-24 15:50:47,382 basehttp 8052 10336 "POST /api/v1/reading/progress/update/ HTTP/1.1" 200 1375
+INFO 2026-02-24 15:50:47,384 basehttp 8052 16608 "POST /api/v1/reading/progress/update/ HTTP/1.1" 200 1375
+INFO 2026-02-24 15:50:47,971 basehttp 8052 16608 "POST /api/v1/reading/progress/update/ HTTP/1.1" 200 1375
+INFO 2026-02-24 15:50:48,127 basehttp 8052 9656 "POST /api/v1/reading/progress/update/ HTTP/1.1" 200 1375
+INFO 2026-02-24 15:50:48,354 basehttp 8052 10368 "POST /api/v1/reading/progress/update/ HTTP/1.1" 200 1375
+INFO 2026-02-24 15:50:48,368 basehttp 8052 10336 "POST /api/v1/reading/progress/update/ HTTP/1.1" 200 1375
+INFO 2026-02-24 15:50:48,721 basehttp 8052 9656 "POST /api/v1/reading/progress/update/ HTTP/1.1" 200 1375
+INFO 2026-02-24 15:50:49,004 basehttp 8052 16608 "POST /api/v1/reading/progress/update/ HTTP/1.1" 200 1376
+INFO 2026-02-24 15:50:49,017 basehttp 8052 10368 "POST /api/v1/reading/progress/update/ HTTP/1.1" 200 1376
+INFO 2026-02-24 15:50:49,017 basehttp 8052 10336 "POST /api/v1/reading/progress/update/ HTTP/1.1" 200 1375
+INFO 2026-02-24 15:50:49,198 basehttp 8052 10276 "POST /api/v1/reading/progress/update/ HTTP/1.1" 200 1378
+INFO 2026-02-24 15:51:15,094 basehttp 8052 10276 "POST /api/v1/reading/progress/update/ HTTP/1.1" 200 1378
+INFO 2026-02-24 15:56:04,559 basehttp 8052 13576 "OPTIONS /api/v1/auth/login/ HTTP/1.1" 200 0
+INFO 2026-02-24 15:56:05,959 basehttp 8052 13576 "POST /api/v1/auth/login/ HTTP/1.1" 200 1089
+INFO 2026-02-24 15:56:06,661 basehttp 8052 13576 "OPTIONS /api/v1/recommendations/ HTTP/1.1" 200 0
+INFO 2026-02-24 15:56:06,683 basehttp 8052 10372 "OPTIONS /api/v1/reading/progress/ HTTP/1.1" 200 0
+INFO 2026-02-24 15:56:06,813 basehttp 8052 13576 "GET /api/v1/reading/progress/ HTTP/1.1" 200 1430
+INFO 2026-02-24 15:56:06,910 basehttp 8052 10372 "GET /api/v1/recommendations/ HTTP/1.1" 200 76
+INFO 2026-02-24 15:56:31,441 basehttp 8052 10372 "OPTIONS /api/v1/novels/genres/ HTTP/1.1" 200 0
+INFO 2026-02-24 15:56:31,473 basehttp 8052 10372 "OPTIONS /api/v1/novels/ HTTP/1.1" 200 0
+INFO 2026-02-24 15:56:31,541 basehttp 8052 13576 "GET /api/v1/novels/genres/ HTTP/1.1" 200 1584
+INFO 2026-02-24 15:56:31,688 basehttp 8052 10372 "GET /api/v1/novels/ HTTP/1.1" 200 16212
+INFO 2026-02-24 17:42:09,002 autoreload 8052 13524 E:\Projects\Freelense assignment\Ebook flutter\backend\apps\recommendations\views.py changed, reloading.
+INFO 2026-02-24 17:42:14,204 autoreload 11296 10492 Watching for file changes with StatReloader
+INFO 2026-02-25 00:30:36,157 autoreload 9900 13040 Watching for file changes with StatReloader
+INFO 2026-02-25 00:31:31,198 basehttp 9900 10320 "OPTIONS /api/v1/auth/login/ HTTP/1.1" 200 0
+WARNING 2026-02-25 00:31:34,636 log 9900 10320 Unauthorized: /api/v1/auth/login/
+WARNING 2026-02-25 00:31:34,661 basehttp 9900 10320 "POST /api/v1/auth/login/ HTTP/1.1" 401 63
+INFO 2026-02-25 00:32:24,508 basehttp 9900 10320 "POST /api/v1/auth/login/ HTTP/1.1" 200 1089
+INFO 2026-02-25 00:32:25,243 basehttp 9900 10320 "OPTIONS /api/v1/recommendations/ HTTP/1.1" 200 0
+INFO 2026-02-25 00:32:25,260 basehttp 9900 8196 "OPTIONS /api/v1/reading/progress/ HTTP/1.1" 200 0
+INFO 2026-02-25 00:32:25,526 basehttp 9900 8196 "GET /api/v1/reading/progress/ HTTP/1.1" 200 1430
+INFO 2026-02-25 00:32:26,096 basehttp 9900 10320 "GET /api/v1/recommendations/ HTTP/1.1" 200 10012
+INFO 2026-02-25 00:32:39,278 basehttp 9900 10320 "OPTIONS /api/v1/novels/genres/ HTTP/1.1" 200 0
+INFO 2026-02-25 00:32:39,290 basehttp 9900 8196 "OPTIONS /api/v1/novels/ HTTP/1.1" 200 0
+INFO 2026-02-25 00:32:39,402 basehttp 9900 10320 "GET /api/v1/novels/genres/ HTTP/1.1" 200 1584
+INFO 2026-02-25 00:32:39,637 basehttp 9900 8196 "GET /api/v1/novels/ HTTP/1.1" 200 16212
+INFO 2026-02-25 00:48:19,553 basehttp 9900 3452 "POST /api/v1/auth/login/ HTTP/1.1" 200 1089
+INFO 2026-02-25 00:48:20,273 basehttp 9900 7480 "GET /api/v1/reading/progress/ HTTP/1.1" 200 1430
+INFO 2026-02-25 00:48:20,496 basehttp 9900 3452 "GET /api/v1/recommendations/ HTTP/1.1" 200 10012
+INFO 2026-02-25 00:48:24,288 basehttp 9900 3452 "OPTIONS /api/v1/novels/9c1a5de7-78f2-48a8-a99c-1b3174056902/ HTTP/1.1" 200 0
+INFO 2026-02-25 00:48:24,491 basehttp 9900 3452 "GET /api/v1/novels/9c1a5de7-78f2-48a8-a99c-1b3174056902/ HTTP/1.1" 200 2370
+INFO 2026-02-25 00:48:39,330 basehttp 9900 3452 "GET /api/v1/novels/genres/ HTTP/1.1" 200 1584
+INFO 2026-02-25 00:48:39,540 basehttp 9900 7480 "GET /api/v1/novels/ HTTP/1.1" 200 16212
+INFO 2026-02-25 14:10:58,548 autoreload 2384 14920 Watching for file changes with StatReloader
+INFO 2026-02-25 14:23:35,721 basehttp 2384 14472 "GET /api/v1/novels/genres/ HTTP/1.1" 200 1584
+INFO 2026-02-25 14:24:04,165 basehttp 2384 3380 "OPTIONS /api/v1/auth/login/ HTTP/1.1" 200 0
+INFO 2026-02-25 14:24:07,487 basehttp 2384 3380 "POST /api/v1/auth/login/ HTTP/1.1" 200 1089
+INFO 2026-02-25 14:24:08,740 basehttp 2384 3380 "OPTIONS /api/v1/recommendations/ HTTP/1.1" 200 0
+INFO 2026-02-25 14:24:08,748 basehttp 2384 3380 "OPTIONS /api/v1/reading/progress/ HTTP/1.1" 200 0
+INFO 2026-02-25 14:24:08,999 basehttp 2384 3380 "GET /api/v1/reading/progress/ HTTP/1.1" 200 1430
+INFO 2026-02-25 14:24:09,969 basehttp 2384 14908 "GET /api/v1/recommendations/ HTTP/1.1" 200 10012
+INFO 2026-02-25 14:24:14,423 basehttp 2384 14908 "OPTIONS /api/v1/novels/genres/ HTTP/1.1" 200 0
+INFO 2026-02-25 14:24:14,459 basehttp 2384 14908 "OPTIONS /api/v1/novels/ HTTP/1.1" 200 0
+INFO 2026-02-25 14:24:14,513 basehttp 2384 14908 "GET /api/v1/novels/genres/ HTTP/1.1" 200 1584
+INFO 2026-02-25 14:24:14,699 basehttp 2384 3380 "GET /api/v1/novels/ HTTP/1.1" 200 16212
+INFO 2026-02-25 14:30:50,320 basehttp 2384 9116 "POST /api/v1/auth/login/ HTTP/1.1" 200 1089
+INFO 2026-02-25 14:30:50,940 basehttp 2384 3652 "GET /api/v1/reading/progress/ HTTP/1.1" 200 1430
+INFO 2026-02-25 14:30:51,413 basehttp 2384 9116 "GET /api/v1/recommendations/ HTTP/1.1" 200 10012
+INFO 2026-02-25 14:31:00,960 basehttp 2384 9116 "GET /api/v1/novels/genres/ HTTP/1.1" 200 1584
+INFO 2026-02-25 14:31:01,109 basehttp 2384 3652 "GET /api/v1/novels/ HTTP/1.1" 200 16212
+INFO 2026-02-25 14:32:34,879 basehttp 2384 3652 "POST /api/v1/auth/login/ HTTP/1.1" 200 1089
+INFO 2026-02-25 14:32:35,467 basehttp 2384 9116 "GET /api/v1/reading/progress/ HTTP/1.1" 200 1430
+INFO 2026-02-25 14:32:35,606 basehttp 2384 3652 "GET /api/v1/recommendations/ HTTP/1.1" 200 10012
+INFO 2026-02-25 14:32:41,838 basehttp 2384 3652 "GET /api/v1/novels/genres/ HTTP/1.1" 200 1584
+INFO 2026-02-25 14:32:41,944 basehttp 2384 9116 "GET /api/v1/novels/ HTTP/1.1" 200 16212
+INFO 2026-02-25 14:34:24,485 basehttp 2384 9116 "POST /api/v1/auth/login/ HTTP/1.1" 200 1089
+INFO 2026-02-25 14:34:25,143 basehttp 2384 3652 "GET /api/v1/reading/progress/ HTTP/1.1" 200 1430
+INFO 2026-02-25 14:34:25,310 basehttp 2384 9116 "GET /api/v1/recommendations/ HTTP/1.1" 200 10012
+INFO 2026-02-25 14:36:30,109 autoreload 2384 14920 E:\Projects\Freelense assignment\Ebook flutter\backend\apps\novels\views.py changed, reloading.
+INFO 2026-02-25 14:36:42,204 autoreload 3584 10844 Watching for file changes with StatReloader
+INFO 2026-02-25 14:37:28,080 autoreload 3584 10844 E:\Projects\Freelense assignment\Ebook flutter\backend\apps\novels\serializers.py changed, reloading.
+INFO 2026-02-25 14:37:31,342 autoreload 11844 7864 Watching for file changes with StatReloader

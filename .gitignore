@@ -1,0 +1,7 @@
+# Flutter
+*.zip
+*.md
+# backend
+backend/venv
+# all pyc files in backend
+backend/*.pyc
