@@ -1,6 +1,8 @@
 import 'package:dio/dio.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:connectivity_plus/connectivity_plus.dart';
 import '../../../../core/network/api_client.dart';
+import '../../../../core/storage/hive_storage.dart';
 import '../models/novel_model.dart';
 
 final novelRepositoryProvider = Provider<NovelRepository>((ref) {
@@ -123,10 +125,18 @@ class NovelRepository {
   }
 
   Future<List<Novel>> getNovels({String? genre, String? search}) async {
+    final connectivity = await Connectivity().checkConnectivity();
+    final isOffline = connectivity == ConnectivityResult.none;
+
+    if (isOffline) {
+      final cached = HiveStorage.getAllNovels();
+      return cached.map((item) => Novel.fromJson(Map<String, dynamic>.from(item))).toList();
+    }
+
     try {
       final response = await _dio.get('novels/', queryParameters: {
-        if (genre != null) 'genre': genre,
-        if (search != null) 'search': search,
+        if (genre != null && genre.isNotEmpty) 'genre': genre,
+        if (search != null && search.isNotEmpty) 'search': search,
       });
 
       if (response.statusCode == 200) {
@@ -139,23 +149,39 @@ class NovelRepository {
         } else {
           list = [];
         }
+        
+        // Cache to Hive
+        for (var item in list) {
+          HiveStorage.saveNovel(Map<String, dynamic>.from(item));
+        }
+
         return list.map((item) => Novel.fromJson(Map<String, dynamic>.from(item))).toList();
       }
     } catch (e) {
       print('Error fetching novels: $e');
-      rethrow;
+      // If error occurs, try returning cache
+      final cached = HiveStorage.getAllNovels();
+      return cached.map((item) => Novel.fromJson(Map<String, dynamic>.from(item))).toList();
     }
     return [];
   }
 
   Future<Novel?> getNovelDetails(String id) async {
+    final connectivity = await Connectivity().checkConnectivity();
+    if (connectivity == ConnectivityResult.none) {
+      final cached = HiveStorage.getAllNovels().firstWhere((n) => n['id'] == id, orElse: () => null);
+      return cached != null ? Novel.fromJson(Map<String, dynamic>.from(cached)) : null;
+    }
+
     try {
       final response = await _dio.get('novels/$id/');
       if (response.statusCode == 200) {
-        return Novel.fromJson(response.data);
+        final novelData = response.data;
+        HiveStorage.saveNovel(Map<String, dynamic>.from(novelData));
+        return Novel.fromJson(novelData);
       }
     } catch (e) {
-      rethrow;
+      return null;
     }
     return null;
   }
@@ -173,12 +199,52 @@ class NovelRepository {
         } else {
           list = [];
         }
-        return list.map((json) => Novel.fromJson(json['novel'])).toList();
+        return list.map((json) => Novel.fromJson(Map<String, dynamic>.from(json['novel']))).toList();
       }
     } catch (e) {
       return [];
     }
     return [];
+  }
+
+  Future<List<Novel>> getTrendingNovels() async {
+    try {
+      final response = await _dio.get('novels/trending/');
+      if (response.statusCode == 200) {
+        final dynamic data = response.data;
+        List list = data is Map ? (data['results'] ?? []) : data;
+        return list.map((json) => Novel.fromJson(Map<String, dynamic>.from(json))).toList();
+      }
+    } catch (e) {
+      return [];
+    }
+    return [];
+  }
+
+  Future<List<Novel>> getPopularNovels() async {
+    try {
+      final response = await _dio.get('novels/popular/');
+      if (response.statusCode == 200) {
+        final dynamic data = response.data;
+        List list = data is Map ? (data['results'] ?? []) : data;
+        return list.map((json) => Novel.fromJson(Map<String, dynamic>.from(json))).toList();
+      }
+    } catch (e) {
+      return [];
+    }
+    return [];
+  }
+
+  Future<String?> downloadNovel(String novelId) async {
+    try {
+      final response = await _dio.get('novels/$novelId/download/');
+      if (response.statusCode == 200) {
+        return response.data['download_url'];
+      }
+    } catch (e) {
+      return null;
+    }
+    return null;
   }
 
   Future<List<NovelReview>> getGlobalReviews() async {

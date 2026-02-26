@@ -1,6 +1,32 @@
 from rest_framework import serializers
 from .models import ReadingProgress, Bookmark, Highlight, ReadingAnalytics
 from apps.novels.serializers import NovelListSerializer
+from apps.novels.models import Chapter
+import uuid
+
+
+class ChapterFlexibleField(serializers.Field):
+    def to_internal_value(self, data):
+        from apps.novels.models import Chapter
+        import uuid
+        try:
+            # Try UUID
+            uuid_val = uuid.UUID(str(data))
+            chapter = Chapter.objects.filter(id=uuid_val).first()
+            if chapter:
+                return chapter
+        except ValueError:
+            try:
+                int_id = int(data)
+                chapter = Chapter.objects.filter(id=int_id).first()
+                if chapter:
+                    return chapter
+            except Exception:
+                pass
+        raise serializers.ValidationError('Chapter must be a valid UUID or integer ID.')
+
+    def to_representation(self, value):
+        return str(value.id) if hasattr(value, 'id') else str(value)
 
 
 class ReadingProgressSerializer(serializers.ModelSerializer):
@@ -17,10 +43,56 @@ class ReadingProgressSerializer(serializers.ModelSerializer):
 
 
 class BookmarkSerializer(serializers.ModelSerializer):
+    position = serializers.FloatField()
+    chapter = ChapterFlexibleField()
+
     class Meta:
         model = Bookmark
         fields = ('id', 'novel', 'chapter', 'page', 'position', 'title', 'note', 'created_at')
         read_only_fields = ('id', 'created_at')
+
+    def validate_chapter(self, value):
+        from apps.novels.models import Chapter
+        import uuid
+        # Accept integer or UUID
+        if isinstance(value, str):
+            try:
+                # Try UUID
+                uuid.UUID(value)
+                return value
+            except ValueError:
+                # Try integer
+                try:
+                    int_id = int(value)
+                    chapter = Chapter.objects.filter(id=int_id).first()
+                    if chapter:
+                        return chapter.id
+                except Exception:
+                    pass
+        elif isinstance(value, int):
+            chapter = Chapter.objects.filter(id=value).first()
+            if chapter:
+                return chapter.id
+        return value
+
+    def to_internal_value(self, data):
+        from apps.novels.models import Chapter
+        import uuid
+        chapter_value = data.get('chapter')
+        if chapter_value is not None:
+            try:
+                # Try UUID
+                uuid_val = uuid.UUID(str(chapter_value))
+                data['chapter'] = uuid_val
+            except ValueError:
+                try:
+                    int_id = int(chapter_value)
+                    chapter = Chapter.objects.filter(id=int_id).first()
+                    if chapter:
+                        data['chapter'] = chapter.id
+                except Exception:
+                    pass
+        return super().to_internal_value(data)
 
 
 class HighlightSerializer(serializers.ModelSerializer):

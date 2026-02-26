@@ -2,7 +2,10 @@ import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:go_router/go_router.dart';
 import '../../../auth/presentation/providers/auth_provider.dart';
+import '../../../../core/network/sync_service.dart';
+import '../../data/models/novel_model.dart';
 import '../../data/repositories/novel_repository.dart';
+import '../../../surveys/presentation/providers/survey_providers.dart';
 import '../providers/library_providers.dart';
 
 class LibraryDashboard extends ConsumerStatefulWidget {
@@ -22,14 +25,24 @@ class _LibraryDashboardState extends ConsumerState<LibraryDashboard> {
     const _ProfileView(),
   ];
 
+  void _refreshCurrentPage() {
+    setState(() {});
+    if (_currentIndex == 3) {
+      // Profile tab
+      ref.refresh(readingProgressProvider);
+    }
+  }
+
   @override
   Widget build(BuildContext context) {
+    ref.watch(syncServiceProvider); // Initialize sync service
     return Scaffold(
       body: _pages[_currentIndex],
       bottomNavigationBar: NavigationBar(
         selectedIndex: _currentIndex,
         onDestinationSelected: (idx) {
           setState(() => _currentIndex = idx);
+          _refreshCurrentPage();
         },
         destinations: const [
           NavigationDestination(
@@ -119,6 +132,42 @@ class _HomeViewState extends ConsumerState<_HomeView> {
                 error: (e, s) => Center(child: Text('Error: $e')),
               ),
             ] else ...[
+              ref.watch(activeSurveysProvider).when(
+                data: (surveys) {
+                  if (surveys.isEmpty) return const SizedBox.shrink();
+                  final survey = surveys.first;
+                  return Container(
+                    margin: const EdgeInsets.all(16),
+                    padding: const EdgeInsets.all(16),
+                    decoration: BoxDecoration(
+                      gradient: LinearGradient(colors: [Colors.blue[700]!, Colors.blue[400]!]),
+                      borderRadius: BorderRadius.circular(16),
+                    ),
+                    child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        Row(
+                          children: const [
+                            Icon(Icons.assignment_ind, color: Colors.white),
+                            SizedBox(width: 8),
+                            Text('Quick Survey', style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold, fontSize: 18)),
+                          ],
+                        ),
+                        const SizedBox(height: 8),
+                        Text(survey.title, style: const TextStyle(color: Colors.white, fontSize: 14)),
+                        const SizedBox(height: 12),
+                        ElevatedButton(
+                          style: ElevatedButton.styleFrom(backgroundColor: Colors.white, foregroundColor: Colors.blue[700]),
+                          onPressed: () => context.go('/library/survey/${survey.id}'),
+                          child: const Text('Take Survey'),
+                        )
+                      ],
+                    ),
+                  );
+                },
+                loading: () => const SizedBox.shrink(),
+                error: (e, s) => const SizedBox.shrink(),
+              ),
               const Padding(
                 padding: EdgeInsets.all(16.0),
                 child: Text('Continue Reading', style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold)),
@@ -191,46 +240,95 @@ class _HomeViewState extends ConsumerState<_HomeView> {
               ),
               
               recommendationsAsync.when(
-                data: (novels) => ListView.builder(
-                  shrinkWrap: true,
-                  physics: const NeverScrollableScrollPhysics(),
-                  padding: const EdgeInsets.symmetric(horizontal: 16),
-                  itemCount: novels.length,
-                  itemBuilder: (context, index) {
-                    final novel = novels[index];
-                    return ListTile(
-                      contentPadding: EdgeInsets.zero,
-                      leading: Container(
-                        width: 50,
-                        height: 80,
-                        decoration: BoxDecoration(
-                          color: Colors.grey[400],
-                          image: novel.coverImage != null 
-                            ? DecorationImage(
-                                image: NetworkImage(novel.coverImage!),
-                                fit: BoxFit.cover,
-                              )
-                            : null,
-                        ),
-                        child: novel.coverImage == null ? const Icon(Icons.image) : null,
+                data: (novels) => Column(
+                  children: novels.take(5).map((novel) => ListTile(
+                    contentPadding: const EdgeInsets.symmetric(horizontal: 16, vertical: 4),
+                    leading: Container(
+                      width: 50,
+                      height: 70,
+                      decoration: BoxDecoration(
+                        borderRadius: BorderRadius.circular(8),
+                        color: Colors.grey[400],
+                        image: novel.coverImage != null 
+                          ? DecorationImage(image: NetworkImage(novel.coverImage!), fit: BoxFit.cover)
+                          : null,
                       ),
-                      title: Text(novel.title, style: const TextStyle(fontWeight: FontWeight.bold)),
-                      subtitle: Text('${novel.genre ?? "Drama"} • ${novel.rating} ★ \nBased on your preferences'),
-                      isThreeLine: true,
-                      trailing: const Icon(Icons.more_vert),
-                      onTap: () => context.go('/library/novel/${novel.id}'),
-                    );
-                  },
+                      child: novel.coverImage == null ? const Icon(Icons.image) : null,
+                    ),
+                    title: Text(novel.title, style: const TextStyle(fontWeight: FontWeight.bold, fontSize: 14)),
+                    subtitle: Text('${novel.genre ?? "Drama"} • ${novel.rating} ★', style: const TextStyle(fontSize: 12)),
+                    trailing: const Icon(Icons.chevron_right),
+                    onTap: () => context.go('/library/novel/${novel.id}'),
+                  )).toList(),
                 ),
                 loading: () => const Center(child: CircularProgressIndicator()),
                 error: (e, s) => Center(child: Text('Error: $e')),
               ),
+
+              const Padding(
+                padding: EdgeInsets.fromLTRB(16, 24, 16, 16),
+                child: Text('Trending Now', style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold)),
+              ),
+              SizedBox(
+                height: 200,
+                child: ref.watch(trendingNovelsProvider).when(
+                  data: (novels) => ListView.builder(
+                    scrollDirection: Axis.horizontal,
+                    padding: const EdgeInsets.symmetric(horizontal: 16),
+                    itemCount: novels.length,
+                    itemBuilder: (context, index) => _buildVerticalCard(context, novels[index]),
+                  ),
+                  loading: () => const Center(child: CircularProgressIndicator()),
+                  error: (e, s) => Center(child: Text('Error: $e')),
+                ),
+              ),
+              const SizedBox(height: 32),
             ]
           ],
         ),
       ),
     );
   }
+}
+
+Widget _buildVerticalCard(BuildContext context, Novel novel) {
+  return GestureDetector(
+    onTap: () => context.go('/library/novel/${novel.id}'),
+    child: Container(
+      width: 120,
+      margin: const EdgeInsets.only(right: 16),
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          Expanded(
+            child: Container(
+              decoration: BoxDecoration(
+                borderRadius: BorderRadius.circular(12),
+                color: Colors.grey[300],
+                image: novel.coverImage != null 
+                  ? DecorationImage(image: NetworkImage(novel.coverImage!), fit: BoxFit.cover)
+                  : null,
+              ),
+              child: novel.coverImage == null ? const Center(child: Icon(Icons.book)) : null,
+            ),
+          ),
+          const SizedBox(height: 8),
+          Text(
+            novel.title, 
+            style: const TextStyle(fontWeight: FontWeight.bold, fontSize: 13),
+            maxLines: 2,
+            overflow: TextOverflow.ellipsis,
+          ),
+          Text(
+            novel.author, 
+            style: const TextStyle(color: Colors.grey, fontSize: 11),
+            maxLines: 1,
+            overflow: TextOverflow.ellipsis,
+          ),
+        ],
+      ),
+    ),
+  );
 }
 
 class _ExploreView extends ConsumerWidget {
@@ -271,28 +369,70 @@ class _ExploreView extends ConsumerWidget {
               child: Text('Genres', style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold)),
             ),
             SizedBox(
-              height: 100,
+              height: 50,
               child: genresAsync.when(
                 data: (genres) => ListView.builder(
                   scrollDirection: Axis.horizontal,
                   padding: const EdgeInsets.symmetric(horizontal: 16),
-                  itemCount: genres.length,
+                  itemCount: genres.length + 1,
                   itemBuilder: (context, index) {
-                    final genre = genres[index];
-                    return Container(
-                      width: 150,
-                      margin: const EdgeInsets.only(right: 12),
-                      decoration: BoxDecoration(
-                        color: Colors.primaries[index % Colors.primaries.length].withOpacity(0.7),
-                        borderRadius: BorderRadius.circular(12),
-                      ),
-                      child: Center(
-                        child: Text(
-                          genre.name,
-                          style: const TextStyle(color: Colors.white, fontWeight: FontWeight.bold),
-                        ),
+                    final isAll = index == 0;
+                    final genre = isAll ? null : genres[index - 1];
+                    final currentGenre = ref.watch(selectedGenreProvider);
+                    final isSelected = isAll ? (currentGenre == null) : (currentGenre == genre?.id.toString());
+
+                    return Padding(
+                      padding: const EdgeInsets.only(right: 8),
+                      child: ChoiceChip(
+                        label: Text(isAll ? 'All' : genre!.name),
+                        selected: isSelected,
+                        onSelected: (selected) {
+                          ref.read(selectedGenreProvider.notifier).state = isAll ? null : genre!.id.toString();
+                        },
                       ),
                     );
+                  },
+                ),
+                loading: () => const Center(child: CircularProgressIndicator()),
+                error: (e, s) => Center(child: Text('Error: $e')),
+              ),
+            ),
+
+            const Padding(
+              padding: EdgeInsets.fromLTRB(16, 24, 16, 16),
+              child: Text('Trending Now', style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold)),
+            ),
+            SizedBox(
+              height: 220,
+              child: ref.watch(trendingNovelsProvider).when(
+                data: (novels) => ListView.builder(
+                  scrollDirection: Axis.horizontal,
+                  padding: const EdgeInsets.symmetric(horizontal: 16),
+                  itemCount: novels.length,
+                  itemBuilder: (context, index) {
+                    final novel = novels[index];
+                    return _buildVerticalCard(context, novel);
+                  },
+                ),
+                loading: () => const Center(child: CircularProgressIndicator()),
+                error: (e, s) => Center(child: Text('Error: $e')),
+              ),
+            ),
+
+            const Padding(
+              padding: EdgeInsets.fromLTRB(16, 24, 16, 16),
+              child: Text('Most Popular', style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold)),
+            ),
+            SizedBox(
+              height: 220,
+              child: ref.watch(popularNovelsProvider).when(
+                data: (novels) => ListView.builder(
+                  scrollDirection: Axis.horizontal,
+                  padding: const EdgeInsets.symmetric(horizontal: 16),
+                  itemCount: novels.length,
+                  itemBuilder: (context, index) {
+                    final novel = novels[index];
+                    return _buildVerticalCard(context, novel);
                   },
                 ),
                 loading: () => const Center(child: CircularProgressIndicator()),
@@ -479,19 +619,20 @@ class _ProfileView extends ConsumerWidget {
             const SizedBox(height: 32),
             
             ListTile(
-              leading: const Icon(Icons.favorite),
-              title: const Text('My Favorites'),
-              onTap: () {},
-            ),
-            ListTile(
               leading: const Icon(Icons.history),
               title: const Text('Reading History'),
-              onTap: () {},
+              onTap: () {
+                // Navigate to reading history screen
+                context.go('/library/reading-history');
+              },
             ),
             ListTile(
-              leading: const Icon(Icons.settings),
-              title: const Text('Settings'),
-              onTap: () {},
+              leading: const Icon(Icons.bookmark),
+              title: const Text('My Bookmarks'),
+              onTap: () {
+                // Navigate to bookmarks screen
+                context.go('/library/bookmarks');
+              },
             ),
             const Divider(),
             ListTile(

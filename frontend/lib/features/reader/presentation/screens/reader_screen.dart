@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:go_router/go_router.dart';
 import '../providers/reader_providers.dart';
 import '../../data/repositories/reader_repository.dart';
 
@@ -22,6 +23,9 @@ class _ReaderScreenState extends ConsumerState<ReaderScreen> {
 
   bool _isMenuVisible = true;
   double _progress = 0.0;
+  DateTime? _sessionStartTime;
+  bool _isBookmarked = false;
+  String? _currentChapterUuid;
 
   void _toggleMenu() {
     setState(() {
@@ -47,18 +51,55 @@ class _ReaderScreenState extends ConsumerState<ReaderScreen> {
   @override
   void initState() {
     super.initState();
-    // Periodically update progress or on dispose
+    _sessionStartTime = DateTime.now();
   }
 
   @override
   void dispose() {
-    // Final progress sync
     _syncProgress();
     super.dispose();
   }
 
   Future<void> _syncProgress() async {
-    await ref.read(readerRepositoryProvider).updateProgress(widget.novelId, widget.chapterId, _progress);
+    final sessionMinutes = _sessionStartTime != null 
+        ? DateTime.now().difference(_sessionStartTime!).inMinutes 
+        : 0;
+    
+    await ref.read(readerRepositoryProvider).updateProgress(
+      widget.novelId, 
+      widget.chapterId, 
+      _progress,
+      minutes: sessionMinutes,
+    );
+  }
+
+  Future<void> _toggleBookmark() async {
+    final success = await ref.read(readerRepositoryProvider).addBookmark(
+      widget.novelId,
+      _currentChapterUuid ?? widget.chapterId,
+      position: _progress,
+    );
+    
+    if (success && mounted) {
+      setState(() => _isBookmarked = true);
+      ScaffoldMessenger.of(context).showSnackBar(
+        const SnackBar(content: Text('Bookmark added'), duration: Duration(seconds: 1)),
+      );
+    }
+  }
+
+  void _navigateToChapterByUuid(String chapterUuid) {
+    final nextPath = '/library/novel/${widget.novelId}/reader/$chapterUuid';
+    context.go(nextPath);
+  }
+
+  void _navigateToChapter(int number) {
+    if (number <= 0) return;
+    // We use context.pushReplacement or context.go to navigate to the next chapter number
+    // Our backend supports novel-id + chapter-number lookup
+    // For simplicity, we navigate by constructing the path
+    final nextPath = '/library/novel/${widget.novelId}/reader/$number';
+    context.go(nextPath);
   }
 
   @override
@@ -70,6 +111,7 @@ class _ReaderScreenState extends ConsumerState<ReaderScreen> {
       body: chapterAsync.when(
         data: (chapter) {
           if (chapter == null) return const Center(child: Text('Chapter content unavailable'));
+          _currentChapterUuid = chapter.id;
           
           return NotificationListener<ScrollNotification>(
             onNotification: (notification) {
@@ -122,14 +164,16 @@ class _ReaderScreenState extends ConsumerState<ReaderScreen> {
                             mainAxisAlignment: MainAxisAlignment.spaceBetween,
                             children: [
                               TextButton.icon(
-                                onPressed: () {},
+                                onPressed: chapter.chapterNumber > 1 
+                                  ? () => _navigateToChapter(chapter.chapterNumber - 1)
+                                  : null,
                                 icon: Icon(Icons.arrow_back, color: _textColor),
-                                label: Text('Prev', style: TextStyle(color: _textColor)),
+                                label: Text('Prev Chapter', style: TextStyle(color: _textColor)),
                               ),
                               TextButton.icon(
-                                onPressed: () {},
+                                onPressed: () => _navigateToChapter(chapter.chapterNumber + 1),
                                 icon: Icon(Icons.arrow_forward, color: _textColor),
-                                label: Text('Next', style: TextStyle(color: _textColor)),
+                                label: Text('Next Chapter', style: TextStyle(color: _textColor)),
                               )
                             ],
                           )
@@ -167,8 +211,11 @@ class _ReaderScreenState extends ConsumerState<ReaderScreen> {
                               ),
                             ),
                             IconButton(
-                              icon: const Icon(Icons.bookmark_border, color: Colors.white),
-                              onPressed: () {},
+                              icon: Icon(
+                                _isBookmarked ? Icons.bookmark : Icons.bookmark_border, 
+                                color: Colors.white
+                              ),
+                              onPressed: _toggleBookmark,
                             ),
                           ],
                         ),

@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:go_router/go_router.dart';
+import '../../../library/data/models/novel_model.dart';
 import '../../../library/data/repositories/novel_repository.dart';
+import '../../../reader/data/repositories/reader_repository.dart';
 import '../../../library/presentation/providers/library_providers.dart';
 
 class NovelDetailScreen extends ConsumerWidget {
@@ -22,17 +24,48 @@ class NovelDetailScreen extends ConsumerWidget {
             title: Text(novel.title),
             actions: [
               IconButton(
-                icon: const Icon(Icons.favorite_border), 
+                icon: Icon(
+                  novel.isFavorited ? Icons.favorite : Icons.favorite_border,
+                  color: novel.isFavorited ? Colors.red : null,
+                ), 
                 onPressed: () async {
                   final success = await ref.read(novelRepositoryProvider).toggleFavorite(novelId);
                   if (success && context.mounted) {
                     ScaffoldMessenger.of(context).showSnackBar(
-                      const SnackBar(content: Text('Library updated'))
+                      SnackBar(content: Text(novel.isFavorited ? 'Removed from Library' : 'Saved to Library'))
                     );
-                    // Refresh novel details to update favorite count if needed
                     ref.invalidate(novelDetailsProvider(novelId));
+                    // Also invalidate novelsProvider to update the lists
+                    ref.invalidate(novelsProvider);
                   }
                 }
+              ),
+              IconButton(
+                icon: const Icon(Icons.download), 
+                onPressed: () async {
+                  final url = await ref.read(novelRepositoryProvider).downloadNovel(novelId);
+                  if (url != null && context.mounted) {
+                    ScaffoldMessenger.of(context).showSnackBar(
+                      const SnackBar(content: Text('Download started...'))
+                    );
+                    // In a real app, we'd use url_launcher or a download manager
+                  }
+                }
+              ),
+              IconButton(
+                icon: const Icon(Icons.cloud_download_outlined),
+                onPressed: () async {
+                  ScaffoldMessenger.of(context).showSnackBar(
+                    const SnackBar(content: Text('Caching chapters for offline reading...'))
+                  );
+                  final chapters = novel.chapters.map((c) => c.id).toList();
+                  await ref.read(readerRepositoryProvider).downloadAllChapters(novelId, chapters);
+                  if (context.mounted) {
+                    ScaffoldMessenger.of(context).showSnackBar(
+                      const SnackBar(content: Text('Novel available offline!'))
+                    );
+                  }
+                },
               ),
               IconButton(icon: const Icon(Icons.share), onPressed: () {}),
             ],
@@ -95,6 +128,9 @@ class NovelDetailScreen extends ConsumerWidget {
                       Text(novel.description ?? 'No description available.'),
                       
                       const SizedBox(height: 24),
+                      _BookmarksSection(novelId: novelId),
+                      
+                      const SizedBox(height: 24),
                       const Text('Chapters', style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold)),
                       const SizedBox(height: 8),
                       ListView.builder(
@@ -138,6 +174,78 @@ class NovelDetailScreen extends ConsumerWidget {
         Text(value, style: const TextStyle(fontWeight: FontWeight.bold, fontSize: 18)),
         Text(label, style: const TextStyle(color: Colors.grey)),
       ],
+    );
+  }
+}
+
+class _BookmarksSection extends ConsumerWidget {
+  final String novelId;
+  const _BookmarksSection({required this.novelId});
+
+  @override
+  Widget build(BuildContext context, WidgetRef ref) {
+    // We'll use a simple FutureBuilder here or create a provider. 
+    // To keep it simple and finish Phase 4:
+    return FutureBuilder<List<dynamic>>(
+      future: ref.read(readerRepositoryProvider).getBookmarks(novelId),
+      builder: (context, snapshot) {
+        if (!snapshot.hasData || snapshot.data!.isEmpty) return const SizedBox.shrink();
+        
+        final bookmarks = snapshot.data!;
+        return Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            const Text('Your Bookmarks', style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold)),
+            const SizedBox(height: 8),
+            SizedBox(
+              height: 100,
+              child: ListView.builder(
+                scrollDirection: Axis.horizontal,
+                itemCount: bookmarks.length,
+                itemBuilder: (context, index) {
+                  final b = bookmarks[index];
+                  return Card(
+                    margin: const EdgeInsets.only(right: 12),
+                    child: Container(
+                      width: 150,
+                      padding: const EdgeInsets.all(8),
+                      child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          Row(
+                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                            children: [
+                              Expanded(child: Text(b['title'] ?? 'Bookmark', style: const TextStyle(fontWeight: FontWeight.bold), maxLines: 1)),
+                              IconButton(
+                                constraints: const BoxConstraints(),
+                                padding: EdgeInsets.zero,
+                                icon: const Icon(Icons.close, size: 14),
+                                onPressed: () async {
+                                  final success = await ref.read(readerRepositoryProvider).removeBookmark(b['id'].toString());
+                                  if (success && context.mounted) {
+                                    ScaffoldMessenger.of(context).showSnackBar(const SnackBar(content: Text('Bookmark removed')));
+                                  }
+                                },
+                              ),
+                            ],
+                          ),
+                          Text('Page ${b['page'] ?? 0}', style: const TextStyle(fontSize: 12, color: Colors.grey)),
+                          const Spacer(),
+                          TextButton(
+                            style: TextButton.styleFrom(padding: EdgeInsets.zero, minimumSize: const Size(0, 0)),
+                            onPressed: () => context.push('/library/novel/$novelId/reader/${b['chapter']}'),
+                            child: const Text('Go', style: TextStyle(fontSize: 12)),
+                          )
+                        ],
+                      ),
+                    ),
+                  );
+                },
+              ),
+            ),
+          ],
+        );
+      },
     );
   }
 }

@@ -38,12 +38,15 @@ class AuthRepository {
     return null;
   }
 
-  Future<AuthUser?> register(String username, String email, String password) async {
+  Future<AuthUser?> register(String username, String email, String password, {String? firstName, String? lastName, String? passwordConfirm}) async {
     try {
       final response = await _dio.post('auth/register/', data: {
         'username': username,
         'email': email,
         'password': password,
+        'first_name': firstName,
+        'last_name': lastName,
+        'password_confirm': passwordConfirm,
       });
 
       if (response.statusCode == 201) {

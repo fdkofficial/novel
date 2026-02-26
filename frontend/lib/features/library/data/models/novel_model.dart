@@ -24,6 +24,7 @@ class Novel {
   final double rating;
   final int chaptersCount;
   final bool isOngoing;
+  final bool isFavorited;
   final List<ChapterSummary> chapters;
 
   Novel({
@@ -36,6 +37,7 @@ class Novel {
     required this.rating,
     required this.chaptersCount,
     required this.isOngoing,
+    this.isFavorited = false,
     this.chapters = const [],
   });
 
@@ -46,10 +48,13 @@ class Novel {
       author: json['author_name'] ?? 'Unknown Author',
       coverImage: json['cover_image'],
       description: json['description'] ?? json['synopsis'],
-      genre: json['genre_name'],
+      genre: (json['genres'] != null && (json['genres'] as List).isNotEmpty) 
+          ? json['genres'][0]['name'] 
+          : json['genre_name'],
       rating: (json['average_rating'] ?? 0.0).toDouble(),
-      chaptersCount: json['chapters_count'] ?? 0,
+      chaptersCount: json['chapters_count'] ?? json['total_chapters'] ?? 0,
       isOngoing: json['status'] == 'ongoing',
+      isFavorited: json['is_favorited'] ?? false,
       chapters: json['chapters'] != null
           ? (json['chapters'] as List)
               .map((c) => ChapterSummary.fromJson(c))

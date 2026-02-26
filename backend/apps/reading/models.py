@@ -41,7 +41,7 @@ class Bookmark(models.Model):
         'novels.Chapter', on_delete=models.CASCADE, related_name='bookmarks', null=True, blank=True
     )
     page = models.IntegerField(default=0)
-    position = models.IntegerField(default=0)  # Character/word position
+    position = models.FloatField(default=0.0)  # Character/word position now accepts float
     title = models.CharField(max_length=200, blank=True)
     note = models.TextField(blank=True)
     created_at = models.DateTimeField(auto_now_add=True)
