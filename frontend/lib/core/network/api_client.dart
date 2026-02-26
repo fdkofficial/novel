@@ -3,7 +3,7 @@ import 'package:flutter_secure_storage/flutter_secure_storage.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
 // Env URL (can be read from .env in prod)
-const String baseUrl = 'http://localhost:8000/api/v1/';
+const String baseUrl = 'https://172f43c4-8000.euw.devtunnels.ms/api/v1/';
 
 // Setup Dio with Interceptors
 final dioProvider = Provider<Dio>((ref) {
