@@ -1,3 +1,0 @@
-@echo off
-echo Starting Django Backend...
-"C:\Users\Fardeen Khan\AppData\Local\Programs\Python\Python311\python.exe" manage.py runserver
