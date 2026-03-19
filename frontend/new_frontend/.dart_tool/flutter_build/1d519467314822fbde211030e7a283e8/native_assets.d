@@ -1,0 +1,1 @@
+ E:\\Projects\\Freelense\ assignment\\Novel\ android\\novel\\frontend\\new_frontend\\.dart_tool\\flutter_build\\1d519467314822fbde211030e7a283e8\\native_assets.yaml: 
