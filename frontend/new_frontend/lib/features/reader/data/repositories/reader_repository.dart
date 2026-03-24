@@ -79,9 +79,35 @@ class ReaderRepository {
     try {
       final response = await _dio.get('reading/bookmarks/', queryParameters: {'novel': novelId});
       if (response.statusCode == 200) {
-        return response.data;
+        final data = response.data;
+        // Handle paginated response
+        if (data is Map && data.containsKey('results')) {
+          return data['results'] is List ? data['results'] : [];
+        }
+        // Handle direct array response
+        return data is List ? data : [];
       }
     } catch (e) {
+      print('Error fetching bookmarks: $e');
+      return [];
+    }
+    return [];
+  }
+
+  Future<List<dynamic>> getAllBookmarks() async {
+    try {
+      final response = await _dio.get('reading/bookmarks/');
+      if (response.statusCode == 200) {
+        final data = response.data;
+        // Handle paginated response
+        if (data is Map && data.containsKey('results')) {
+          return data['results'] is List ? data['results'] : [];
+        }
+        // Handle direct array response
+        return data is List ? data : [];
+      }
+    } catch (e) {
+      print('Error fetching all bookmarks: $e');
       return [];
     }
     return [];

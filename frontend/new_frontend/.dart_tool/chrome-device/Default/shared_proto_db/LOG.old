@@ -1,3 +1,5 @@
-2026/03/19-08:28:11.666 35fc Reusing MANIFEST C:\Users\FARDEE~1\AppData\Local\Temp\flutter_tools.c373cdb5\flutter_tools_chrome_device.13766261\Default\shared_proto_db/MANIFEST-000001
-2026/03/19-08:28:11.667 35fc Recovering log #3
-2026/03/19-08:28:11.668 35fc Reusing old log C:\Users\FARDEE~1\AppData\Local\Temp\flutter_tools.c373cdb5\flutter_tools_chrome_device.13766261\Default\shared_proto_db/000003.log 
+2026/03/19-16:07:22.926 2c94 Reusing MANIFEST C:\Users\FARDEE~1\AppData\Local\Temp\flutter_tools.c704883e\flutter_tools_chrome_device.982dec60\Default\shared_proto_db/MANIFEST-000001
+2026/03/19-16:07:22.938 2c94 Recovering log #3
+2026/03/19-16:07:22.939 2c94 (ignoring error) C:\Users\FARDEE~1\AppData\Local\Temp\flutter_tools.c704883e\flutter_tools_chrome_device.982dec60\Default\shared_proto_db/000003.log: dropping 24637 bytes; Corruption: checksum mismatch
+2026/03/19-16:07:22.939 2c94 (ignoring error) C:\Users\FARDEE~1\AppData\Local\Temp\flutter_tools.c704883e\flutter_tools_chrome_device.982dec60\Default\shared_proto_db/000003.log: dropping 32768 bytes; Corruption: checksum mismatch
+2026/03/19-16:07:22.940 2c94 Reusing old log C:\Users\FARDEE~1\AppData\Local\Temp\flutter_tools.c704883e\flutter_tools_chrome_device.982dec60\Default\shared_proto_db/000003.log 
