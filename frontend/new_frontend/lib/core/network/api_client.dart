@@ -4,6 +4,7 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 
 // Env URL (can be read from .env in prod)
 const String baseUrl = 'https://172f43c4-8000.euw.devtunnels.ms/api/v1/';
+const String backendBaseUrl = 'https://172f43c4-8000.euw.devtunnels.ms';
 
 // Setup Dio with Interceptors
 final dioProvider = Provider<Dio>((ref) {
@@ -18,6 +19,7 @@ final dioProvider = Provider<Dio>((ref) {
   ));
 
   dio.interceptors.add(AuthInterceptor(ref));
+  dio.interceptors.add(MediaUrlInterceptor());
   return dio;
 });
 
@@ -44,5 +46,37 @@ class AuthInterceptor extends Interceptor {
     // Implement token refresh logic here on 401
     // if err.response?.statusCode == 401 ...
     super.onError(err, handler);
+  }
+}
+
+// Media URL Interceptor to fix localhost URLs
+class MediaUrlInterceptor extends Interceptor {
+  @override
+  void onResponse(Response response, ResponseInterceptorHandler handler) {
+    if (response.data != null) {
+      response.data = _fixMediaUrls(response.data);
+    }
+    super.onResponse(response, handler);
+  }
+
+  dynamic _fixMediaUrls(dynamic data) {
+    if (data is Map) {
+      final Map<String, dynamic> fixedMap = {};
+      data.forEach((key, value) {
+        fixedMap[key.toString()] = _fixMediaUrls(value);
+      });
+      return fixedMap;
+    } else if (data is List) {
+      return data.map((item) => _fixMediaUrls(item)).toList();
+    } else if (data is String) {
+      // Replace localhost URLs with the actual backend URL
+      if (data.contains('http://localhost:8000')) {
+        return data.replaceAll('http://localhost:8000', backendBaseUrl);
+      }
+      if (data.contains('http://127.0.0.1:8000')) {
+        return data.replaceAll('http://127.0.0.1:8000', backendBaseUrl);
+      }
+    }
+    return data;
   }
 }
