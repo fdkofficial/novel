@@ -160,6 +160,13 @@ SIMPLE_JWT = {
 CORS_ALLOW_ALL_ORIGINS = True
 CORS_ALLOW_CREDENTIALS = True
 
+# CSRF Settings for devtunnel
+CSRF_TRUSTED_ORIGINS = [
+    'https://172f43c4-8000.euw.devtunnels.ms',
+    'http://localhost:8000',
+    'http://127.0.0.1:8000',
+]
+
 # Email
 EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
 EMAIL_HOST = os.getenv('EMAIL_HOST', 'smtp.gmail.com')
