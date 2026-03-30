@@ -1086,3 +1086,151 @@ INFO 2026-03-19 17:15:39,769 basehttp 10652 11728 - Broken pipe from ('127.0.0.1
 INFO 2026-03-30 12:49:27,249 autoreload 7752 14804 Watching for file changes with StatReloader
 INFO 2026-03-30 12:50:46,895 autoreload 15196 14412 Watching for file changes with StatReloader
 INFO 2026-03-30 14:38:47,891 autoreload 13516 18772 Watching for file changes with StatReloader
+INFO 2026-03-30 14:44:39,363 autoreload 13120 3132 Watching for file changes with StatReloader
+INFO 2026-03-30 14:46:58,594 basehttp 13120 19984 "OPTIONS /api/v1/auth/login/ HTTP/1.1" 200 0
+INFO 2026-03-30 14:47:08,999 basehttp 13120 19984 "POST /api/v1/auth/login/ HTTP/1.1" 200 1089
+INFO 2026-03-30 14:47:09,817 basehttp 13120 19984 "OPTIONS /api/v1/recommendations/ HTTP/1.1" 200 0
+INFO 2026-03-30 14:47:09,831 basehttp 13120 19948 "OPTIONS /api/v1/reading/progress/ HTTP/1.1" 200 0
+INFO 2026-03-30 14:47:10,330 basehttp 13120 6052 "OPTIONS /api/v1/surveys/active/ HTTP/1.1" 200 0
+INFO 2026-03-30 14:47:10,798 basehttp 13120 15528 "OPTIONS /api/v1/novels/trending/ HTTP/1.1" 200 0
+INFO 2026-03-30 14:47:10,975 basehttp 13120 6052 "GET /api/v1/surveys/active/ HTTP/1.1" 200 52
+INFO 2026-03-30 14:47:12,580 basehttp 13120 15528 "GET /api/v1/novels/trending/ HTTP/1.1" 200 17009
+INFO 2026-03-30 14:47:13,549 basehttp 13120 19948 "GET /api/v1/reading/progress/ HTTP/1.1" 200 7016
+INFO 2026-03-30 14:47:14,650 basehttp 13120 19984 "GET /api/v1/recommendations/ HTTP/1.1" 200 10012
+INFO 2026-03-30 14:48:21,973 autoreload 13120 3132 E:\Projects\Freelense assignment\Novel android\novel\backend\novel_reading_api\settings.py changed, reloading.
+INFO 2026-03-30 14:48:28,949 autoreload 18700 17104 Watching for file changes with StatReloader
+INFO 2026-03-30 14:49:18,788 basehttp 18700 11528 "POST /api/v1/auth/login/ HTTP/1.1" 200 1089
+INFO 2026-03-30 14:49:20,009 basehttp 18700 14960 "GET /api/v1/reading/progress/ HTTP/1.1" 200 7011
+INFO 2026-03-30 14:49:20,061 basehttp 18700 10724 "GET /api/v1/surveys/active/ HTTP/1.1" 200 52
+INFO 2026-03-30 14:49:20,247 basehttp 18700 9732 "GET /api/v1/novels/trending/ HTTP/1.1" 200 17009
+INFO 2026-03-30 14:49:20,480 basehttp 18700 11528 "GET /api/v1/recommendations/ HTTP/1.1" 200 10012
+WARNING 2026-03-30 14:49:21,085 log 18700 10724 Not Found: /media/covers/cover_Q3UAVEl.jpg
+WARNING 2026-03-30 14:49:21,087 basehttp 18700 10724 "GET /media/covers/cover_Q3UAVEl.jpg HTTP/1.1" 404 3135
+INFO 2026-03-30 14:50:01,448 basehttp 18700 10724 - Broken pipe from ('127.0.0.1', 50657)
+INFO 2026-03-30 14:50:01,448 basehttp 18700 9732 - Broken pipe from ('127.0.0.1', 50060)
+INFO 2026-03-30 14:50:01,448 basehttp 18700 14960 - Broken pipe from ('127.0.0.1', 55886)
+INFO 2026-03-30 14:50:01,449 basehttp 18700 11528 - Broken pipe from ('127.0.0.1', 55365)
+INFO 2026-03-30 14:56:46,403 basehttp 18700 11012 "OPTIONS /api/v1/auth/login/ HTTP/1.1" 200 0
+INFO 2026-03-30 14:56:47,986 basehttp 18700 11012 "POST /api/v1/auth/login/ HTTP/1.1" 200 1089
+INFO 2026-03-30 14:56:49,152 basehttp 18700 11012 "OPTIONS /api/v1/recommendations/ HTTP/1.1" 200 0
+INFO 2026-03-30 14:56:49,165 basehttp 18700 11012 "OPTIONS /api/v1/reading/progress/ HTTP/1.1" 200 0
+INFO 2026-03-30 14:56:49,172 basehttp 18700 11012 "OPTIONS /api/v1/surveys/active/ HTTP/1.1" 200 0
+INFO 2026-03-30 14:56:49,253 basehttp 18700 11012 "OPTIONS /api/v1/novels/trending/ HTTP/1.1" 200 0
+INFO 2026-03-30 14:56:49,562 basehttp 18700 11012 "GET /api/v1/reading/progress/ HTTP/1.1" 200 7011
+INFO 2026-03-30 14:56:49,651 basehttp 18700 16220 "GET /api/v1/surveys/active/ HTTP/1.1" 200 52
+INFO 2026-03-30 14:56:50,011 basehttp 18700 16552 "GET /api/v1/recommendations/ HTTP/1.1" 200 10012
+INFO 2026-03-30 14:56:50,311 basehttp 18700 18568 "GET /api/v1/novels/trending/ HTTP/1.1" 200 17009
+WARNING 2026-03-30 14:56:50,517 log 18700 16552 Not Found: /media/covers/cover_Q3UAVEl.jpg
+WARNING 2026-03-30 14:56:50,518 basehttp 18700 16552 "GET /media/covers/cover_Q3UAVEl.jpg HTTP/1.1" 404 3135
+INFO 2026-03-30 14:56:55,294 basehttp 18700 16552 "GET /api/v1/reading/progress/ HTTP/1.1" 200 7011
+INFO 2026-03-30 14:56:59,447 basehttp 18700 16552 "OPTIONS /api/v1/novels/my-novels/ HTTP/1.1" 200 0
+INFO 2026-03-30 14:56:59,566 basehttp 18700 16552 "GET /api/v1/novels/my-novels/ HTTP/1.1" 200 2901
+WARNING 2026-03-30 14:56:59,727 log 18700 16552 Not Found: /media/covers/cover_uDBWVQm.jpg
+WARNING 2026-03-30 14:56:59,728 basehttp 18700 16552 "GET /media/covers/cover_uDBWVQm.jpg HTTP/1.1" 404 3135
+WARNING 2026-03-30 14:56:59,869 log 18700 16552 Not Found: /media/covers/1000344375.jpg
+WARNING 2026-03-30 14:56:59,870 basehttp 18700 16552 "GET /media/covers/1000344375.jpg HTTP/1.1" 404 3126
+WARNING 2026-03-30 14:56:59,935 log 18700 16552 Not Found: /media/covers/cover.jpg
+WARNING 2026-03-30 14:56:59,936 basehttp 18700 16552 "GET /media/covers/cover.jpg HTTP/1.1" 404 3111
+INFO 2026-03-30 14:57:03,046 basehttp 18700 16552 "OPTIONS /api/v1/novels/my-novels/fdbf9ac3-3683-4b69-bd56-576c66373dff/chapters/ HTTP/1.1" 200 0
+INFO 2026-03-30 14:57:03,064 basehttp 18700 16552 "GET /api/v1/novels/my-novels/fdbf9ac3-3683-4b69-bd56-576c66373dff/chapters/ HTTP/1.1" 200 207
+INFO 2026-03-30 14:57:07,948 basehttp 18700 16552 "OPTIONS /api/v1/novels/genres/ HTTP/1.1" 200 0
+INFO 2026-03-30 14:57:08,000 basehttp 18700 16552 "GET /api/v1/novels/genres/ HTTP/1.1" 200 1584
+INFO 2026-03-30 14:57:20,407 basehttp 18700 16552 "OPTIONS /api/v1/novels/my-novels/fdbf9ac3-3683-4b69-bd56-576c66373dff/update/ HTTP/1.1" 200 0
+INFO 2026-03-30 14:57:21,574 basehttp 18700 16552 "PATCH /api/v1/novels/my-novels/fdbf9ac3-3683-4b69-bd56-576c66373dff/update/ HTTP/1.1" 200 383
+INFO 2026-03-30 14:57:21,849 basehttp 18700 16552 "GET /api/v1/novels/my-novels/ HTTP/1.1" 200 2901
+WARNING 2026-03-30 14:57:22,249 log 18700 16552 Not Found: /media/covers/cover_kWkNGoG.jpg
+WARNING 2026-03-30 14:57:22,251 basehttp 18700 16552 "GET /media/covers/cover_kWkNGoG.jpg HTTP/1.1" 404 3135
+WARNING 2026-03-30 14:58:28,193 log 18700 18164 Not Found: /media/covers/cover_kWkNGoG.jpg
+WARNING 2026-03-30 14:58:28,193 basehttp 18700 18164 "GET /media/covers/cover_kWkNGoG.jpg HTTP/1.1" 404 3135
+WARNING 2026-03-30 14:58:28,342 log 18700 18164 Not Found: /favicon.ico
+WARNING 2026-03-30 14:58:28,343 basehttp 18700 18164 "GET /favicon.ico HTTP/1.1" 404 3078
+WARNING 2026-03-30 14:58:40,606 log 18700 18164 Not Found: /media/media/covers/cover_kWkNGoG.jpg
+WARNING 2026-03-30 14:58:40,607 basehttp 18700 18164 "GET /media/media/covers/cover_kWkNGoG.jpg HTTP/1.1" 404 3153
+WARNING 2026-03-30 14:58:44,545 log 18700 18164 Not Found: /media/covers/cover_kWkNGoG.jpg
+WARNING 2026-03-30 14:58:44,547 basehttp 18700 18164 "GET /media/covers/cover_kWkNGoG.jpg HTTP/1.1" 404 3135
+INFO 2026-03-30 14:59:24,119 autoreload 18700 17104 E:\Projects\Freelense assignment\Novel android\novel\backend\novel_reading_api\settings.py changed, reloading.
+INFO 2026-03-30 14:59:29,136 autoreload 18236 4188 Watching for file changes with StatReloader
+WARNING 2026-03-30 14:59:32,621 log 18236 17796 Not Found: /media/covers/cover_kWkNGoG.jpg
+WARNING 2026-03-30 14:59:32,622 basehttp 18236 17796 "GET /media/covers/cover_kWkNGoG.jpg HTTP/1.1" 404 3135
+WARNING 2026-03-30 14:59:36,932 log 18236 17796 Not Found: /media/covers/cover_kWkNGoG.jpg
+WARNING 2026-03-30 14:59:36,932 basehttp 18236 17796 "GET /media/covers/cover_kWkNGoG.jpg HTTP/1.1" 404 3135
+WARNING 2026-03-30 14:59:50,984 log 18236 17796 Not Found: /media/covers/cover_kWkNGoG.jpg
+WARNING 2026-03-30 14:59:50,984 basehttp 18236 17796 "GET /media/covers/cover_kWkNGoG.jpg HTTP/1.1" 404 3135
+WARNING 2026-03-30 15:00:03,840 log 18236 17796 Not Found: /
+WARNING 2026-03-30 15:00:03,841 basehttp 18236 17796 "GET / HTTP/1.1" 404 3027
+INFO 2026-03-30 15:03:26,977 basehttp 18236 14792 "GET /api/v1/novels/genres/ HTTP/1.1" 200 1584
+INFO 2026-03-30 15:03:37,664 basehttp 18236 14792 "PATCH /api/v1/novels/my-novels/fdbf9ac3-3683-4b69-bd56-576c66373dff/update/ HTTP/1.1" 200 383
+INFO 2026-03-30 15:03:38,096 basehttp 18236 14792 "GET /api/v1/novels/my-novels/ HTTP/1.1" 200 2901
+WARNING 2026-03-30 15:03:38,508 log 18236 14792 Not Found: /media/covers/cover_d9APfjF.jpg
+WARNING 2026-03-30 15:03:38,509 basehttp 18236 14792 "GET /media/covers/cover_d9APfjF.jpg HTTP/1.1" 404 3135
+WARNING 2026-03-30 15:03:48,064 log 18236 17796 Not Found: /
+WARNING 2026-03-30 15:03:48,064 basehttp 18236 17796 "GET / HTTP/1.1" 404 3027
+INFO 2026-03-30 15:04:30,333 autoreload 18236 4188 E:\Projects\Freelense assignment\Novel android\novel\backend\novel_reading_api\urls.py changed, reloading.
+INFO 2026-03-30 15:04:34,802 autoreload 20060 8252 Watching for file changes with StatReloader
+INFO 2026-03-30 15:04:42,231 autoreload 20060 8252 E:\Projects\Freelense assignment\Novel android\novel\backend\novel_reading_api\urls.py changed, reloading.
+INFO 2026-03-30 15:04:46,030 autoreload 7532 6140 Watching for file changes with StatReloader
+WARNING 2026-03-30 15:04:47,989 log 7532 3720 Not Found: /
+WARNING 2026-03-30 15:04:47,990 basehttp 7532 3720 "GET / HTTP/1.1" 404 3027
+WARNING 2026-03-30 15:04:49,433 log 7532 3720 Not Found: /
+WARNING 2026-03-30 15:04:49,433 basehttp 7532 3720 "GET / HTTP/1.1" 404 3027
+WARNING 2026-03-30 15:04:49,832 log 7532 3720 Not Found: /
+WARNING 2026-03-30 15:04:49,832 basehttp 7532 3720 "GET / HTTP/1.1" 404 3027
+INFO 2026-03-30 15:06:09,792 autoreload 7532 6140 E:\Projects\Freelense assignment\Novel android\novel\backend\novel_reading_api\urls.py changed, reloading.
+INFO 2026-03-30 15:06:13,811 autoreload 6600 8140 Watching for file changes with StatReloader
+INFO 2026-03-30 15:06:28,726 autoreload 6600 8140 E:\Projects\Freelense assignment\Novel android\novel\backend\novel_reading_api\urls.py changed, reloading.
+INFO 2026-03-30 15:06:32,589 autoreload 19872 13236 Watching for file changes with StatReloader
+INFO 2026-03-30 15:07:01,047 autoreload 19872 13236 E:\Projects\Freelense assignment\Novel android\novel\backend\novel_reading_api\urls.py changed, reloading.
+INFO 2026-03-30 15:07:05,686 autoreload 17724 20448 Watching for file changes with StatReloader
+WARNING 2026-03-30 15:07:09,325 log 17724 8196 Not Found: /
+WARNING 2026-03-30 15:07:09,326 basehttp 17724 8196 "GET / HTTP/1.1" 404 3027
+WARNING 2026-03-30 15:07:31,653 log 17724 8196 Not Found: /media/covers/cover_kWkNGoG.jpg
+WARNING 2026-03-30 15:07:31,654 basehttp 17724 8196 "GET /media/covers/cover_kWkNGoG.jpg HTTP/1.1" 404 3135
+INFO 2026-03-30 15:08:32,336 autoreload 17724 20448 E:\Projects\Freelense assignment\Novel android\novel\backend\novel_reading_api\urls.py changed, reloading.
+INFO 2026-03-30 15:08:38,536 autoreload 14368 15836 Watching for file changes with StatReloader
+INFO 2026-03-30 15:18:45,154 basehttp 14368 2136 "GET /media/covers/cover_kWkNGoG.jpg HTTP/1.1" 200 1104454
+INFO 2026-03-30 15:23:34,216 autoreload 14368 15836 E:\Projects\Freelense assignment\Novel android\novel\backend\novel_reading_api\settings.py changed, reloading.
+INFO 2026-03-30 15:23:41,612 autoreload 15760 6192 Watching for file changes with StatReloader
+INFO 2026-03-30 15:24:08,321 basehttp 15760 3592 "POST /api/v1/auth/login/ HTTP/1.1" 200 1089
+INFO 2026-03-30 15:24:09,757 basehttp 15760 1460 "GET /api/v1/reading/progress/ HTTP/1.1" 200 7016
+INFO 2026-03-30 15:24:09,836 basehttp 15760 16548 "GET /api/v1/surveys/active/ HTTP/1.1" 200 52
+INFO 2026-03-30 15:24:10,406 basehttp 15760 3592 "GET /api/v1/recommendations/ HTTP/1.1" 200 10012
+INFO 2026-03-30 15:24:10,543 basehttp 15760 5532 "GET /api/v1/novels/trending/ HTTP/1.1" 200 17009
+INFO 2026-03-30 15:24:18,604 basehttp 15760 5532 "GET /api/v1/reading/progress/ HTTP/1.1" 200 7016
+INFO 2026-03-30 15:24:18,718 basehttp 15760 3592 "GET /api/v1/reading/progress/ HTTP/1.1" 200 7016
+INFO 2026-03-30 15:24:21,286 basehttp 15760 3592 "GET /api/v1/novels/my-novels/ HTTP/1.1" 200 2921
+INFO 2026-03-30 15:24:27,544 basehttp 15760 3592 "GET /api/v1/novels/my-novels/fdbf9ac3-3683-4b69-bd56-576c66373dff/chapters/ HTTP/1.1" 200 207
+INFO 2026-03-30 15:24:32,105 basehttp 15760 3592 "GET /api/v1/novels/genres/ HTTP/1.1" 200 1584
+INFO 2026-03-30 15:24:47,045 basehttp 15760 3592 "PATCH /api/v1/novels/my-novels/fdbf9ac3-3683-4b69-bd56-576c66373dff/update/ HTTP/1.1" 200 388
+INFO 2026-03-30 15:24:47,449 basehttp 15760 3592 "GET /api/v1/novels/my-novels/ HTTP/1.1" 200 2921
+INFO 2026-03-30 17:09:12,658 autoreload 3916 19268 Watching for file changes with StatReloader
+INFO 2026-03-30 17:09:25,443 basehttp 3916 12660 "OPTIONS /api/v1/auth/login/ HTTP/1.1" 200 0
+INFO 2026-03-30 17:09:27,152 basehttp 3916 12660 "POST /api/v1/auth/login/ HTTP/1.1" 200 1089
+INFO 2026-03-30 17:09:28,375 basehttp 3916 12660 "OPTIONS /api/v1/recommendations/ HTTP/1.1" 200 0
+INFO 2026-03-30 17:09:28,391 basehttp 3916 20292 "OPTIONS /api/v1/reading/progress/ HTTP/1.1" 200 0
+INFO 2026-03-30 17:09:28,440 basehttp 3916 20292 "OPTIONS /api/v1/surveys/active/ HTTP/1.1" 200 0
+INFO 2026-03-30 17:09:29,009 basehttp 3916 5036 "OPTIONS /api/v1/novels/trending/ HTTP/1.1" 200 0
+INFO 2026-03-30 17:09:29,097 basehttp 3916 8356 "OPTIONS /api/v1/novels/genres/ HTTP/1.1" 200 0
+INFO 2026-03-30 17:09:29,105 basehttp 3916 5036 "OPTIONS /api/v1/novels/ratings/ HTTP/1.1" 200 0
+INFO 2026-03-30 17:09:29,153 basehttp 3916 14188 "OPTIONS /api/v1/novels/popular/ HTTP/1.1" 200 0
+INFO 2026-03-30 17:09:29,185 basehttp 3916 15228 "GET /api/v1/surveys/active/ HTTP/1.1" 200 52
+INFO 2026-03-30 17:09:29,185 basehttp 3916 8356 "OPTIONS /api/v1/novels/ HTTP/1.1" 200 0
+INFO 2026-03-30 17:09:29,193 basehttp 3916 20292 "GET /api/v1/reading/progress/ HTTP/1.1" 200 7011
+INFO 2026-03-30 17:09:29,497 basehttp 3916 8356 "GET /api/v1/novels/ratings/ HTTP/1.1" 200 52
+INFO 2026-03-30 17:09:29,585 basehttp 3916 14188 "GET /api/v1/novels/genres/ HTTP/1.1" 200 1584
+INFO 2026-03-30 17:09:30,234 basehttp 3916 20292 "GET /api/v1/novels/ HTTP/1.1" 200 15484
+INFO 2026-03-30 17:09:30,282 basehttp 3916 5036 "GET /api/v1/novels/trending/ HTTP/1.1" 200 17009
+INFO 2026-03-30 17:09:30,386 basehttp 3916 15228 "GET /api/v1/novels/popular/ HTTP/1.1" 200 15463
+INFO 2026-03-30 17:09:30,562 basehttp 3916 14188 "GET /media/covers/cover_M9aSkbx.jpg HTTP/1.1" 200 1104454
+INFO 2026-03-30 17:09:31,171 basehttp 3916 12660 "GET /api/v1/recommendations/ HTTP/1.1" 200 10012
+INFO 2026-03-30 17:09:31,318 basehttp 3916 18148 "GET /media/covers/cover_M9aSkbx.jpg HTTP/1.1" 200 1104454
+INFO 2026-03-30 17:09:41,715 basehttp 3916 15228 "GET /media/covers/cover.jpg HTTP/1.1" 200 79769
+WARNING 2026-03-30 17:09:41,723 log 3916 12660 Not Found: /media/covers/cover_uDBWVQm.jpg
+WARNING 2026-03-30 17:09:41,723 log 3916 14188 Not Found: /media/covers/1000344375.jpg
+WARNING 2026-03-30 17:09:41,731 basehttp 3916 12660 "GET /media/covers/cover_uDBWVQm.jpg HTTP/1.1" 404 3502
+WARNING 2026-03-30 17:09:41,731 basehttp 3916 14188 "GET /media/covers/1000344375.jpg HTTP/1.1" 404 3490
+INFO 2026-03-30 17:09:48,308 basehttp 3916 14188 "OPTIONS /api/v1/novels/9c1a5de7-78f2-48a8-a99c-1b3174056902/ HTTP/1.1" 200 0
+INFO 2026-03-30 17:09:48,548 basehttp 3916 14188 "GET /api/v1/novels/9c1a5de7-78f2-48a8-a99c-1b3174056902/ HTTP/1.1" 200 2408
+INFO 2026-03-30 17:09:49,094 basehttp 3916 14188 "OPTIONS /api/v1/reading/bookmarks/?novel=9c1a5de7-78f2-48a8-a99c-1b3174056902 HTTP/1.1" 200 0
+INFO 2026-03-30 17:09:49,158 basehttp 3916 14188 "GET /api/v1/reading/bookmarks/?novel=9c1a5de7-78f2-48a8-a99c-1b3174056902 HTTP/1.1" 200 52
+INFO 2026-03-30 17:13:29,210 autoreload 3916 19268 E:\Projects\Freelense assignment\Novel android\novel\backend\novel_reading_api\settings.py changed, reloading.
+INFO 2026-03-30 17:13:34,520 autoreload 5224 8340 Watching for file changes with StatReloader

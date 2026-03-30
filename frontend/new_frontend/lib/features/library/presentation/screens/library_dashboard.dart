@@ -15,34 +15,34 @@ class LibraryDashboard extends ConsumerStatefulWidget {
   ConsumerState<LibraryDashboard> createState() => _LibraryDashboardState();
 }
 
-class _LibraryDashboardState extends ConsumerState<LibraryDashboard> {
+class _LibraryDashboardState extends ConsumerState<LibraryDashboard> with SingleTickerProviderStateMixin {
   int _currentIndex = 0;
+  late final List<Widget> _pages;
 
-  final List<Widget> _pages = [
-    const _HomeView(),
-    const _ExploreView(),
-    const _CommunityView(),
-    const _ProfileView(),
-  ];
-
-  void _refreshCurrentPage() {
-    setState(() {});
-    if (_currentIndex == 3) {
-      // Profile tab
-      ref.refresh(readingProgressProvider);
-    }
+  @override
+  void initState() {
+    super.initState();
+    // Initialize pages once to prevent rebuilds
+    _pages = const [
+      _HomeView(),
+      _ExploreView(),
+      _CommunityView(),
+      _ProfileView(),
+    ];
   }
 
   @override
   Widget build(BuildContext context) {
     ref.watch(syncServiceProvider); // Initialize sync service
     return Scaffold(
-      body: _pages[_currentIndex],
+      body: IndexedStack(
+        index: _currentIndex,
+        children: _pages,
+      ),
       bottomNavigationBar: NavigationBar(
         selectedIndex: _currentIndex,
         onDestinationSelected: (idx) {
           setState(() => _currentIndex = idx);
-          _refreshCurrentPage();
         },
         destinations: const [
           NavigationDestination(
@@ -77,11 +77,16 @@ class _HomeView extends ConsumerStatefulWidget {
   ConsumerState<_HomeView> createState() => _HomeViewState();
 }
 
-class _HomeViewState extends ConsumerState<_HomeView> {
+class _HomeViewState extends ConsumerState<_HomeView> with AutomaticKeepAliveClientMixin {
   bool _isSearching = false;
 
   @override
+  bool get wantKeepAlive => true; // Keep the state alive
+
+  @override
   Widget build(BuildContext context) {
+    super.build(context); // Required for AutomaticKeepAliveClientMixin
+    
     final recommendationsAsync = ref.watch(recommendationsProvider);
     final readingProgressAsync = ref.watch(readingProgressProvider);
     final searchQuery = ref.watch(searchQueryProvider);
@@ -196,6 +201,9 @@ class _HomeViewState extends ConsumerState<_HomeView> {
                                     image: NetworkImage(progress.novel.coverImage!),
                                     fit: BoxFit.cover,
                                     colorFilter: ColorFilter.mode(Colors.black.withOpacity(0.3), BlendMode.darken),
+                                    onError: (exception, stackTrace) {
+                                      // Handle image load error silently
+                                    },
                                   )
                                 : null,
                             ),

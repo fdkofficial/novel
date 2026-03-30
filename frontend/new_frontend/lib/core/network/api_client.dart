@@ -10,8 +10,9 @@ const String backendBaseUrl = 'https://elitevisiongmbh.de';
 final dioProvider = Provider<Dio>((ref) {
   final dio = Dio(BaseOptions(
     baseUrl: baseUrl,
-    connectTimeout: const Duration(seconds: 15),
-    receiveTimeout: const Duration(seconds: 15),
+    connectTimeout: const Duration(seconds: 30), // Increased timeout
+    receiveTimeout: const Duration(seconds: 30), // Increased timeout
+    sendTimeout: const Duration(seconds: 30), // Added send timeout
     headers: {
       'Content-Type': 'application/json',
       'Accept': 'application/json',
@@ -20,6 +21,15 @@ final dioProvider = Provider<Dio>((ref) {
 
   dio.interceptors.add(AuthInterceptor(ref));
   dio.interceptors.add(MediaUrlInterceptor());
+  
+  // Add logging interceptor for debugging
+  dio.interceptors.add(LogInterceptor(
+    requestBody: true,
+    responseBody: false,
+    error: true,
+    logPrint: (obj) => print('[DIO] $obj'),
+  ));
+  
   return dio;
 });
 
@@ -70,7 +80,7 @@ class MediaUrlInterceptor extends Interceptor {
       return data.map((item) => _fixMediaUrls(item)).toList();
     } else if (data is String) {
       // Replace localhost URLs with the actual backend URL
-      if (data.contains('https://elitevisiongmbh.de')) {
+      if (data.contains('http://localhost:8000')) {
         return data.replaceAll('https://elitevisiongmbh.de', backendBaseUrl);
       }
       if (data.contains('http://127.0.0.1:8000')) {
