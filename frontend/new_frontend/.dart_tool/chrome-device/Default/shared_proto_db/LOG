@@ -1,7 +1,10 @@
-2026/03/24-12:58:52.667 2ae8 Reusing MANIFEST C:\Users\FARDEE~1\AppData\Local\Temp\flutter_tools.6a4c6c95\flutter_tools_chrome_device.bc83c897\Default\shared_proto_db/MANIFEST-000001
-2026/03/24-12:58:52.668 2ae8 Recovering log #3
-2026/03/24-12:58:52.668 2ae8 (ignoring error) C:\Users\FARDEE~1\AppData\Local\Temp\flutter_tools.6a4c6c95\flutter_tools_chrome_device.bc83c897\Default\shared_proto_db/000003.log: dropping 24637 bytes; Corruption: checksum mismatch
-2026/03/24-12:58:52.669 2ae8 (ignoring error) C:\Users\FARDEE~1\AppData\Local\Temp\flutter_tools.6a4c6c95\flutter_tools_chrome_device.bc83c897\Default\shared_proto_db/000003.log: dropping 32768 bytes; Corruption: checksum mismatch
-2026/03/24-12:58:52.669 2ae8 (ignoring error) C:\Users\FARDEE~1\AppData\Local\Temp\flutter_tools.6a4c6c95\flutter_tools_chrome_device.bc83c897\Default\shared_proto_db/000003.log: dropping 32768 bytes; Corruption: checksum mismatch
-2026/03/24-12:58:52.669 2ae8 (ignoring error) C:\Users\FARDEE~1\AppData\Local\Temp\flutter_tools.6a4c6c95\flutter_tools_chrome_device.bc83c897\Default\shared_proto_db/000003.log: dropping 50 bytes; Corruption: missing start of fragmented record(2)
-2026/03/24-12:58:52.670 2ae8 Reusing old log C:\Users\FARDEE~1\AppData\Local\Temp\flutter_tools.6a4c6c95\flutter_tools_chrome_device.bc83c897\Default\shared_proto_db/000003.log 
+2026/03/30-14:20:19.128 2884 Reusing MANIFEST C:\Users\FARDEE~1\AppData\Local\Temp\flutter_tools.6917bbb9\flutter_tools_chrome_device.2ebcc821\Default\shared_proto_db/MANIFEST-000001
+2026/03/30-14:20:19.129 2884 Recovering log #3
+2026/03/30-14:20:19.130 2884 (ignoring error) C:\Users\FARDEE~1\AppData\Local\Temp\flutter_tools.6917bbb9\flutter_tools_chrome_device.2ebcc821\Default\shared_proto_db/000003.log: dropping 24637 bytes; Corruption: checksum mismatch
+2026/03/30-14:20:19.130 2884 (ignoring error) C:\Users\FARDEE~1\AppData\Local\Temp\flutter_tools.6917bbb9\flutter_tools_chrome_device.2ebcc821\Default\shared_proto_db/000003.log: dropping 32768 bytes; Corruption: checksum mismatch
+2026/03/30-14:20:19.130 2884 (ignoring error) C:\Users\FARDEE~1\AppData\Local\Temp\flutter_tools.6917bbb9\flutter_tools_chrome_device.2ebcc821\Default\shared_proto_db/000003.log: dropping 32768 bytes; Corruption: checksum mismatch
+2026/03/30-14:20:19.131 2884 (ignoring error) C:\Users\FARDEE~1\AppData\Local\Temp\flutter_tools.6917bbb9\flutter_tools_chrome_device.2ebcc821\Default\shared_proto_db/000003.log: dropping 50 bytes; Corruption: missing start of fragmented record(2)
+2026/03/30-14:20:19.134 2884 Reusing old log C:\Users\FARDEE~1\AppData\Local\Temp\flutter_tools.6917bbb9\flutter_tools_chrome_device.2ebcc821\Default\shared_proto_db/000003.log 
+2026/03/30-14:21:18.727 4238 Level-0 table #5: started
+2026/03/30-14:21:18.737 4238 Level-0 table #5: 133895 bytes OK
+2026/03/30-14:21:18.743 4238 Delete type=0 #3

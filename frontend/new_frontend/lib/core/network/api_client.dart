@@ -3,8 +3,8 @@ import 'package:flutter_secure_storage/flutter_secure_storage.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
 // Env URL (can be read from .env in prod)
-const String baseUrl = 'https://172f43c4-8000.euw.devtunnels.ms/api/v1/';
-const String backendBaseUrl = 'https://172f43c4-8000.euw.devtunnels.ms';
+const String baseUrl = 'https://elitevisiongmbh.de/api/v1/';
+const String backendBaseUrl = 'https://elitevisiongmbh.de';
 
 // Setup Dio with Interceptors
 final dioProvider = Provider<Dio>((ref) {
@@ -70,8 +70,8 @@ class MediaUrlInterceptor extends Interceptor {
       return data.map((item) => _fixMediaUrls(item)).toList();
     } else if (data is String) {
       // Replace localhost URLs with the actual backend URL
-      if (data.contains('http://localhost:8000')) {
-        return data.replaceAll('http://localhost:8000', backendBaseUrl);
+      if (data.contains('https://elitevisiongmbh.de')) {
+        return data.replaceAll('https://elitevisiongmbh.de', backendBaseUrl);
       }
       if (data.contains('http://127.0.0.1:8000')) {
         return data.replaceAll('http://127.0.0.1:8000', backendBaseUrl);
